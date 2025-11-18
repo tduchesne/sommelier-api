@@ -6,6 +6,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Data
 @NoArgsConstructor
 @Entity
@@ -24,4 +27,23 @@ public class Plat {
 
     @Column(columnDefinition = "TEXT")
     private String allergenes;
+
+    // Implémentation manuelle de equals et hashCode
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Plat)) return false;
+        Plat plat = (Plat) o;
+        return id != null && id.equals(plat.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+
+    // Relation Many-to-Many (Côté Inverse)
+    @ManyToMany(mappedBy = "platsAccordes", fetch = FetchType.LAZY)
+    private Set<Vin> vinsAccordes = new HashSet<>();
+
 }

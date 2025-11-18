@@ -1,10 +1,17 @@
 package com.vinotech.sommelier_api.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
-@Data
+// Remplacement de @Data par @Getter/@Setter
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "vins")
@@ -17,15 +24,41 @@ public class Vin {
     @Column(nullable = false)
     private String nom;
 
-    private Double prix;
+    @Column(precision = 10, scale = 2)
+    private BigDecimal prix;
 
     @Column(nullable = false)
     private String region;
 
-    @Column(columnDefinition = "TEXT")
-    private String notes_degustation;
+    @Column(name = "notes_degustation", columnDefinition = "TEXT")
+    private String notesDegustation;
+
+    @Enumerated(EnumType.STRING)
+    private CouleurVin couleur;
 
     private String cepage;
 
-    private String couleur;
+    // Implémentation manuelle de equals et hashCode
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Vin)) return false;
+        Vin vin = (Vin) o;
+        // On se base uniquement sur l'ID de la DB
+        return id != null && id.equals(vin.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+
+    // Relation Many-to-Many (Côté Possesseur)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "accord_vin_plat",
+            joinColumns = @JoinColumn(name = "vin_id"),
+            inverseJoinColumns = @JoinColumn(name = "plat_id")
+    )
+    private Set<Plat> platsAccordes = new HashSet<>();
 }
