@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.AccessLevel;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,6 +31,7 @@ public class Plat {
     private String allergenes;
 
     // Relation Many-to-Many (Côté Inverse)
+    @Setter(AccessLevel.NONE)
     @ManyToMany(mappedBy = "platsAccordes", fetch = FetchType.LAZY)
     private Set<Vin> vinsAccordes = new HashSet<>();
 
