@@ -6,10 +6,8 @@ import lombok.Setter;
 import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
-// Remplacement de @Data par @Getter/@Setter
 @Getter
 @Setter
 @NoArgsConstructor
