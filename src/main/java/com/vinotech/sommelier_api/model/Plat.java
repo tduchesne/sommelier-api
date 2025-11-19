@@ -28,7 +28,12 @@ public class Plat {
     @Column(columnDefinition = "TEXT")
     private String allergenes;
 
-    // Implémentation manuelle de equals et hashCode
+    /**
+     * Determine whether this Plat is equal to another object based on its non-null id.
+     *
+     * @param o the object to compare with this Plat
+     * @return `true` if the other object is a {@code Plat} with the same non-null id, `false` otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -37,6 +42,11 @@ public class Plat {
         return id != null && id.equals(plat.id);
     }
 
+    /**
+     * Compute a hash code based on the entity's runtime class.
+     *
+     * @return the hash code of the runtime class, identical for all instances of the same class
+     */
     @Override
     public int hashCode() {
         return getClass().hashCode();

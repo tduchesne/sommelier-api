@@ -38,7 +38,12 @@ public class Vin {
 
     private String cepage;
 
-    // Implémentation manuelle de equals et hashCode
+    /**
+     * Determine whether this Vin is equal to another object by comparing their persistent IDs.
+     *
+     * @param o the object to compare with this Vin
+     * @return `true` if {@code o} is a {@code Vin} and both have the same non-null id, `false` otherwise
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -48,6 +53,11 @@ public class Vin {
         return id != null && id.equals(vin.id);
     }
 
+    /**
+     * Compute a hash code based on the entity's runtime class.
+     *
+     * @return the hash code of the entity's runtime class
+     */
     @Override
     public int hashCode() {
         return getClass().hashCode();
