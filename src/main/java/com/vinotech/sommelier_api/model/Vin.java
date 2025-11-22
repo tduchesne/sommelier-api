@@ -1,17 +1,17 @@
 package com.vinotech.sommelier_api.model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
-@Setter
+
+@Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "vins")
 public class Vin {
