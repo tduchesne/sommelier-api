@@ -506,8 +506,8 @@ class PlatTest {
         platSet.add(plat);
         platSet.add(plat2);
 
-        // Then - Both should be in set because hashCode is based on class
-        assertThat(platSet).hasSize(2);
+        // Then - Only one should be in set because equality is based on id
+        assertThat(platSet).hasSize(1);
     }
 
     @Test

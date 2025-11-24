@@ -75,6 +75,7 @@ public class Vin {
 
     // Relation Many-to-Many (Côté Possesseur)
     @Setter(AccessLevel.NONE) // Empêche Lombok de générer setPlatsAccordes()
+    @Builder.Default
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "accord_vin_plat",

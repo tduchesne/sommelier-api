@@ -583,8 +583,8 @@ class VinTest {
         vinSet.add(vin);
         vinSet.add(vin2); // Same ID as vin
 
-        // Then - Both should be in set because hashCode is based on class
-        assertThat(vinSet).hasSize(2);
+        // Then - Only one should be in set because equality is based on id
+        assertThat(vinSet).hasSize(1);
     }
 
     @Test
