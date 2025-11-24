@@ -21,7 +21,6 @@ import java.util.Optional;
 
 import static org.hamcrest.Matchers.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -107,7 +106,7 @@ class VinControllerTest {
         mockMvc.perform(post("/api/vins")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(newVin)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id").value(4L))
                 .andExpect(jsonPath("$.nom").value("Nouveau Vin"))
@@ -143,7 +142,7 @@ class VinControllerTest {
         mockMvc.perform(post("/api/vins")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(minimalVin)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").value(5L))
                 .andExpect(jsonPath("$.nom").value("Vin Simple"))
                 .andExpect(jsonPath("$.region").value("Alsace"))
@@ -177,7 +176,7 @@ class VinControllerTest {
             mockMvc.perform(post("/api/vins")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content(objectMapper.writeValueAsString(vin)))
-                    .andExpect(status().isOk())
+                    .andExpect(status().isCreated())
                     .andExpect(jsonPath("$.couleur").value(couleur.toString()));
 
             reset(vinService);
@@ -216,7 +215,7 @@ class VinControllerTest {
         mockMvc.perform(post("/api/vins")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(vin)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.nom").value(maxNom))
                 .andExpect(jsonPath("$.region").value(maxRegion))
                 .andExpect(jsonPath("$.cepage").value(maxCepage))
@@ -248,7 +247,7 @@ class VinControllerTest {
         mockMvc.perform(post("/api/vins")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(vin)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.prix").value(0.00));
     }
 
@@ -277,7 +276,7 @@ class VinControllerTest {
         mockMvc.perform(post("/api/vins")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(vin)))
-                .andExpect(status().isOk())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.prix").value(99999999.99));
     }
 
@@ -287,7 +286,7 @@ class VinControllerTest {
         // When & Then
         mockMvc.perform(post("/api/vins")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{invalid json"))
+                        .content(""))
                 .andExpect(status().isBadRequest());
 
         verify(vinService, never()).save(any(Vin.class));

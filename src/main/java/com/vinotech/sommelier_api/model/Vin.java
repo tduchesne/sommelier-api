@@ -48,6 +48,10 @@ public class Vin {
         if (plat == null) {
             return;
         }
+        // Ensure the collection exists (defensive against builder/all-args constructor that may set it to null)
+        if (this.platsAccordes == null) {
+            this.platsAccordes = new HashSet<>();
+        }
         if (this.platsAccordes.add(plat)) {
             Set<Vin> vinsAccordes = plat.getVinsAccordes();
             if (vinsAccordes != null) {
@@ -63,6 +67,10 @@ public class Vin {
      */
     public void removePlat(Plat plat) {
         if (plat == null) {
+            return;
+        }
+        // If the collection is null there's nothing to remove
+        if (this.platsAccordes == null) {
             return;
         }
         if (this.platsAccordes.remove(plat)) {

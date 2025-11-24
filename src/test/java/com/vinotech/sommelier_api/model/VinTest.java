@@ -193,10 +193,8 @@ class VinTest {
     @DisplayName("Should handle plat with null vinsAccordes")
     void shouldHandlePlatWithNullVinsAccordes() {
         // Given
-        Plat platWithNullVins = new Plat();
-        platWithNullVins.setId(3L);
-        platWithNullVins.setNom("Special Plat");
-        // vinsAccordes is initialized in constructor, but let's test the null check
+        // Use the all-args constructor and pass null for vinsAccordes so the Plat truly has a null collection
+        Plat platWithNullVins = new Plat(3L, "Special Plat", null, null, null);
 
         // When
         vin.addPlat(platWithNullVins);

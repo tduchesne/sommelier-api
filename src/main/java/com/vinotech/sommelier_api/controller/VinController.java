@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.net.URI;
 import java.util.List;
 
 @RestController // Marque cette classe pour gérer les requêtes REST
@@ -24,9 +25,10 @@ public class VinController {
      * Crée un nouveau Vin. Mappé sur POST /api/vins
      */
     @PostMapping
-    public Vin createVin(@RequestBody Vin vin) {
-        // Appelle le Service pour sauvegarder
-        return vinService.save(vin);
+    public ResponseEntity<Vin> createVin(@RequestBody Vin vin) {
+        Vin saved = vinService.save(vin);
+        URI location = URI.create("/api/vins/" + saved.getId());
+        return ResponseEntity.created(location).body(saved);
     }
 
     /**
