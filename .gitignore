@@ -35,3 +35,5 @@ build/
 # --- CONFIGURATION DE SÉCURITÉ DB ---
 # Ignore le fichier de configuration spécifique au profil local/secret
 /src/main/resources/application-local.properties
+# Ignore main application.properties to prevent committed credentials
+/src/main/resources/application.properties

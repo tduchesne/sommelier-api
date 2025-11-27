@@ -1,4 +1,6 @@
-# --- DEFAULT Configuration (Secured for Prod) ---
+# --- SAMPLE Configuration for application.properties ---
+# Copy this file to application.properties and fill in your local values.
+# DO NOT commit application.properties with real credentials!
 
 # Application Name
 spring.application.name=sommelier-api
@@ -17,20 +19,29 @@ server.error.include-stacktrace=never
 # 1. CONNECTION PARAMETERS (Environment-based)
 # ----------------------------------------------------
 # PostgreSQL URL - Set via environment variable DB_HOST (default: localhost:5432)
+# For local development, use: localhost:5432
+# Example: spring.datasource.url=jdbc:postgresql://localhost:5432/sommelier_db
 spring.datasource.url=jdbc:postgresql://${DB_HOST:localhost:5432}/sommelier_db
-# Username - Set via environment variable DB_USER (default: empty - must be provided)
-spring.datasource.username=${DB_USER:}
-# Password - Set via environment variable DB_PASSWORD (default: empty - must be provided)
-spring.datasource.password=${DB_PASSWORD:}
+
+# Username - Set via environment variable DB_USER
+# For local development, use: postgres (or your local DB user)
+spring.datasource.username=${DB_USER:postgres}
+
+# Password - Set via environment variable DB_PASSWORD
+# For local development, use: your local DB password (e.g., 1234 for dev)
+spring.datasource.password=${DB_PASSWORD:1234}
 
 # ----------------------------------------------------
 # 2. JPA/HIBERNATE PARAMETERS
 # ----------------------------------------------------
 # SQL Dialect
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
 # Show SQL in console (set to false for prod safety, overridden in local profile)
 spring.jpa.show-sql=false
+
 # Database initialization action:
 # - none: Do nothing
 # - update: Update schema
 spring.jpa.hibernate.ddl-auto=update
+
