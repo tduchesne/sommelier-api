@@ -25,6 +25,7 @@ public class VinController {
      * Crée un nouveau Vin. Mappé sur POST /api/vins
      */
     @PostMapping
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Vin> createVin(@RequestBody Vin vin) {
         Vin saved = vinService.save(vin);
         URI location = URI.create("/api/vins/" + saved.getId());
