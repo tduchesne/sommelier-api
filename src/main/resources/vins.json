@@ -1,0 +1,914 @@
+[
+  {
+    "nom": "Toronto, Rosé, Grüvi / Dry Secco",
+    "region": "ON, Canada",
+    "prix": 9.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Sans alcool",
+    "notesDegustation": "Super frais, bulles vives, à apprécier seules ou en mocktails!"
+  },
+  {
+    "nom": "Cava, Funàmbul Brut Nature Reserva 2021",
+    "region": "Espagne (Entre Vinyes)",
+    "prix": 61.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Assemblage",
+    "notesDegustation": "[BIO] (N) Nez très élégant, aromatique, brioché. (B) Super doux, tellement sur le fruit qu'on croirait du sucre résiduel, mais c'est brut nature! Fleurs blanches."
+  },
+  {
+    "nom": "Champagne, Brut Majeur, Ayala",
+    "region": "France",
+    "prix": 149.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Assemblage",
+    "notesDegustation": "Classique, fin et élégant."
+  },
+  {
+    "nom": "Champagne, Brut Blanc de Blancs L'irremplaçable, Paul Lebrun",
+    "region": "France",
+    "prix": 145.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "100% Chardonnay",
+    "notesDegustation": "[HVE] (N) Toast, réducteur, autolyse, amandes, pomme fraîche. (B) Sec, long, zesté, fruits du verger, cédrat, amertume délicate."
+  },
+  {
+    "nom": "Champagne, Fauve 2018, Famille Delouvin",
+    "region": "France",
+    "prix": 197.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "75% Chardonnay, 25% Pinot Meunier",
+    "notesDegustation": "[BIO] 6 mois inox + 60 mois sur lattes. (N) Popcorn au beurre et pain grillé. (B) Riche, finale longue sur une fraîcheur aérienne. Salin, minéral."
+  },
+  {
+    "nom": "Crémant de Loire, Villebois",
+    "region": "France",
+    "prix": 69.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Chenin Blanc",
+    "notesDegustation": "Frais et léger, parfait pour l'apéro."
+  },
+  {
+    "nom": "Hinchinbrooke, Constellation Rosé 2021",
+    "region": "QC, Canada (Les Gémeaux)",
+    "prix": 65.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Assemblage",
+    "notesDegustation": "24 mois sur lies. (N) Brioché, bonbon, floral. (B) Fraises des bois, acidité vive, rhubarbe, camerise, bulle crémeuse. Parfait pour le brunch!!"
+  },
+  {
+    "nom": "Italia, Bason Vino Frizzante Rosso, Distina",
+    "region": "Italie",
+    "prix": 85.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Barbera et Bonarda",
+    "notesDegustation": "[BIO] Balsam, viandeux, végétal. Au verre à l'automne??"
+  },
+  {
+    "nom": "King Valley, Prosecco 2023, Nomads Garden",
+    "region": "Australie",
+    "prix": 65.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Glera",
+    "notesDegustation": "(N) Parfumé, délicat, camomille, floral. (B) Sweet (7g/L), mais bel équilibre avec la fraîcheur et la bulle crémeuse, minéralité, tartelette citron-meringue. Rockefeller/Brunch top!"
+  },
+  {
+    "nom": "Mendoza, Omaggio Pet Nat Cabernet franc 2023",
+    "region": "Argentine (Stella Crinita)",
+    "prix": 95.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Cabernet Franc",
+    "notesDegustation": "[NATURE] (N) Floral, violette, clou de girofle, végétal, cendré. (B) Jus de cerise, acidité et amertume en finale. Bulle vive."
+  },
+  {
+    "nom": "St-Paul-d'Abbotsford, Farniente noir de noir 2024",
+    "region": "QC, Canada (Domaine Le Grand Saint-Charles)",
+    "prix": 63.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Noir de Noir",
+    "notesDegustation": "[BIO] Méthode trad, 18 mois sur lies. (N) Brioché, fleurs blanches, délicat. (B) Belle bulle fine, côté nature mais très en finesse, levuré, pain grillé."
+  },
+  {
+    "nom": "Ulverton, Bulles de Champ Brut Nature Frontenac blanc 2022",
+    "region": "QC, Canada (Les Vallons de Wadleigh)",
+    "prix": 68.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Frontenac Blanc",
+    "notesDegustation": "[BIO/NATURE] Méthode trad, 18 mois sur lies. (N) Brioché, fleurs blanches, délicat. (B) Belle bulle fine, levuré, pain grillé, thé blanc, acidité fraîche."
+  },
+  {
+    "nom": "Western Cape, Méthode Cap Classique Brut, Boschendal",
+    "region": "Afrique du Sud",
+    "prix": 70.00,
+    "couleur": "EFFERVESCENT",
+    "cepage": "Chardonnay, Pinot Noir",
+    "notesDegustation": "Sur lies. Classique et structuré."
+  },
+  {
+    "nom": "Alsace, Symbiose 2022, Muller-Koeberlé",
+    "region": "France (Alsace)",
+    "prix": 89.00,
+    "couleur": "BLANC",
+    "cepage": "Assemblage Alsacien",
+    "notesDegustation": "[NATURE] (N) Wow... coing, vibe moscato... mielleux, sultana, marmelade. (B) Acidité vive, long sur la salinité, minéral, tannins souples. Finale un peu poivrée... wow!"
+  },
+  {
+    "nom": "Argentina, Paraje Altamira Oak Chardonnay 2024",
+    "region": "Argentine (Rocamadre)",
+    "prix": 82.00,
+    "couleur": "BLANC",
+    "cepage": "Chardonnay",
+    "notesDegustation": "[BIO] 5 jours sur peaux, ciment. 'Grand cru' d'Argentine... Nez vif d'agrumes, pamplemousse, pierre mouillée (minéral). Texturé, légèrement boisé/toasté."
+  },
+  {
+    "nom": "Austria, Tarantella 2023, Nord und Sud",
+    "region": "Autriche",
+    "prix": 72.00,
+    "couleur": "BLANC",
+    "cepage": "Gruner, Pinot Blanc, Muscat",
+    "notesDegustation": "[NATURE] Frais et léger."
+  },
+  {
+    "nom": "Chablis 1er Cru Côte de Léchet 2020, Jean-Marc Brocard",
+    "region": "France (Bourgogne)",
+    "prix": 130.00,
+    "couleur": "BLANC",
+    "cepage": "Chardonnay",
+    "notesDegustation": "[BIO] Floral, rond, flatteur. Fort ensoleillement = raisin bien mûr."
+  },
+  {
+    "nom": "Clare Valley, Polish Hill River Smith Riesling 2023",
+    "region": "Australie (Adelina)",
+    "prix": 77.00,
+    "couleur": "BLANC",
+    "cepage": "Riesling",
+    "notesDegustation": "[BIO] (N) Riesling avec un peu de rondeur, fleurs blanches, rose, amandes. (B) Frais, fruité, long, accessible, croque pomme verte, citron-lime."
+  },
+  {
+    "nom": "Cirò, Bianco 2024, Cataldo Calabretta",
+    "region": "Italie",
+    "prix": 77.00,
+    "couleur": "BLANC",
+    "cepage": "Greco, Malvazia",
+    "notesDegustation": "[BIO] (N) Wow... salin, aromatique, citron confit. (B) Super minéral, ample, beaucoup de volume. Très salin, un peu d'amertume, végétal, zeste de lime."
+  },
+  {
+    "nom": "Coastal Region, Chenin Blanc - Verdelho - Viognier 2022",
+    "region": "Afrique du Sud (Rall)",
+    "prix": 117.00,
+    "couleur": "BLANC",
+    "cepage": "Assemblage",
+    "notesDegustation": "Cuvée béton et vieux foudre. (N) Fin, élégant, un peu lies/bâtonnage, amandes. (B) WOW. Équilibre, rondeur, litchi du viognier, acidité fraîche du verdejo, corps."
+  },
+  {
+    "nom": "Côtes Catalanes, Terre d'Ardoise Carignan blanc VV 2023",
+    "region": "France (Mas L'Avail)",
+    "prix": 54.00,
+    "couleur": "BLANC",
+    "cepage": "Carignan Blanc",
+    "notesDegustation": "[BIO] (N) Citron confit, beurré, lactique, amandes crues. (B) Full croissant, levuré, long, chaud, enrobant, mais finale sur la salinité... yogourt."
+  },
+  {
+    "nom": "Côtes du Jura, En Beaumont Savagnin ouillé 2022",
+    "region": "France (Croix & Courbet)",
+    "prix": 158.00,
+    "couleur": "BLANC",
+    "cepage": "Savagnin",
+    "notesDegustation": "Vignes de Château-Châlon. (N) Paille, poivre blanc, levure, malt. (B) Tellement expressive, crémeuse, acidité vive, c'est tannique, tellement de puissance."
+  },
+  {
+    "nom": "Côtes-du-Rhône, Bloom 2024",
+    "region": "France",
+    "prix": 83.00,
+    "couleur": "BLANC",
+    "cepage": "Clairette, Grenache Blanc, Viognier",
+    "notesDegustation": "[NATURE] (N) Floral (printanier), fruits blancs (poire ++). (B) Délicate amertume en finale."
+  },
+  {
+    "nom": "España, Las Lomas Le Meprisé Verdejo 2023",
+    "region": "Espagne (Viños Malaparte)",
+    "prix": 69.00,
+    "couleur": "BLANC",
+    "cepage": "Verdejo",
+    "notesDegustation": "[BIODY/NATURE] (N) Salin, végétal, fruit de la passion, ananas. (B) Super belle, attaque ronde, texturée, lies ++, briochée. Finale sur la poire."
+  },
+  {
+    "nom": "Florina, Samaropetra Sauvignon blanc 2024, Kir-Yianni",
+    "region": "Grèce",
+    "prix": 81.00,
+    "couleur": "BLANC",
+    "cepage": "Sauvignon Blanc",
+    "notesDegustation": "Frais et aromatique."
+  },
+  {
+    "nom": "Hemmingford, B2 Seyval blanc - Vidal 2023",
+    "region": "QC, Canada (Les Bacchantes)",
+    "prix": 45.00,
+    "couleur": "BLANC",
+    "cepage": "Seyval blanc, Vidal",
+    "notesDegustation": "Local et frais."
+  },
+  {
+    "nom": "Lisboa, Flor de Lisboa 2024, Vidigal Wines",
+    "region": "Portugal",
+    "prix": 41.00,
+    "couleur": "BLANC",
+    "cepage": "Assemblage",
+    "notesDegustation": "(N) Aromatique, floral, frais, exotique, fruits à noyau. (B) Fun, frais, digeste, fruité, finale un peu herbacée."
+  },
+  {
+    "nom": "Mendoza, Cosmovisión Chardonnay 2020",
+    "region": "Argentine",
+    "prix": 112.00,
+    "couleur": "BLANC",
+    "cepage": "Chardonnay",
+    "notesDegustation": "[BIO] 10 mois fût. (N) Mielleux, épicé, confit. (B) Full gastro, écorce d'orange, amertume légère en finale, cire d'abeille, un peu épice douce. Woooow!"
+  },
+  {
+    "nom": "Muscadet, M 2024, Stéphane Orieux",
+    "region": "France",
+    "prix": 65.00,
+    "couleur": "BLANC",
+    "cepage": "Melon de Bourgogne",
+    "notesDegustation": "[BIO] Sur lie. Frais et minéral."
+  },
+  {
+    "nom": "Ontario, Shoemaker Vidal - Riesling 2022",
+    "region": "ON, Canada (Trois Moineaux)",
+    "prix": 65.00,
+    "couleur": "BLANC",
+    "cepage": "Vidal, Riesling",
+    "notesDegustation": "[RAISONNÉE] Léger, frais, citronné. Léger perlant au début. Parfait vin d'apéro, huîtres, etc. Petite salinité en finale, acidité vive."
+  },
+  {
+    "nom": "Prince Edward County, Vineyard Chardonnay 2021",
+    "region": "ON, Canada (Closson Chase)",
+    "prix": 89.00,
+    "couleur": "BLANC",
+    "cepage": "Chardonnay",
+    "notesDegustation": "[VEGAN] (N) Très élégant, fin, on sent un peu l'élevage sans lourdeur. (B) Rond, yogourt, très long, acidité en finale."
+  },
+  {
+    "nom": "Niederösterreich, Terrassen Grüner veltliner 2024, Huber",
+    "region": "Autriche",
+    "prix": 66.00,
+    "couleur": "BLANC",
+    "cepage": "Grüner Veltliner",
+    "notesDegustation": "[BIO/VEGAN] Classique autrichien."
+  },
+  {
+    "nom": "Rheinhessen, Eisquell Riesling Trocken 2023",
+    "region": "Allemagne",
+    "prix": 72.00,
+    "couleur": "BLANC",
+    "cepage": "Riesling",
+    "notesDegustation": "[BIO] Croquant, raisin vert, litchi, textbook riesling avec note de pierre à fusil et pétrolière."
+  },
+  {
+    "nom": "Rías Baixas, Pedralonga Albariño 2023",
+    "region": "Espagne",
+    "prix": 82.00,
+    "couleur": "BLANC",
+    "cepage": "Albariño",
+    "notesDegustation": "[BIODY] Vibe Les Argiles! Cuve inox, super minéral, long en bouche. Grande complexité et finesse."
+  },
+  {
+    "nom": "Rioja, Larrosa Garnacha 2023, Izadi",
+    "region": "Espagne",
+    "prix": 54.00,
+    "couleur": "BLANC",
+    "cepage": "Garnacha Blanca",
+    "notesDegustation": "Très léger, digeste, frais. Vin de piscine! Citron confit genre... avec une légère finale sur l'amertume."
+  },
+  {
+    "nom": "Rueda, Sapientia Verdejo 2023, El Lagar de Moha",
+    "region": "Espagne",
+    "prix": 67.00,
+    "couleur": "BLANC",
+    "cepage": "Verdejo",
+    "notesDegustation": "[BIODY/VEGAN] Frais et expressif."
+  },
+  {
+    "nom": "Saint-Armand, Les Marguerites Saint-Pépin 2024",
+    "region": "QC, Canada (Vignoble Pigeon Hill)",
+    "prix": 78.00,
+    "couleur": "BLANC",
+    "cepage": "Saint-Pépin",
+    "notesDegustation": "[BIO] (N) Herbacé, nature, rusticité, mais en finesse/délicatesse. (B) Camomille, belle texture, un peu de corps, très cool pour pairings."
+  },
+  {
+    "nom": "Saint-Joseph, Sur Le Quartz Marsanne 2023",
+    "region": "France (Benoît Roseau)",
+    "prix": 102.00,
+    "couleur": "BLANC",
+    "cepage": "Marsanne",
+    "notesDegustation": "[BIO] (N) Full aromatique, litchi, pêche, canneberge blanche... wow!! (B) Un peu de fût bien intégré, superbe, un grand vin de gastro."
+  },
+  {
+    "nom": "Saint-Véran, Bois de Fée 2018, Domaine Thibert",
+    "region": "France",
+    "prix": 154.00,
+    "couleur": "BLANC",
+    "cepage": "Chardonnay",
+    "notesDegustation": "Riche et complexe."
+  },
+  {
+    "nom": "Sancerre 2023, Eric Louis",
+    "region": "France",
+    "prix": 97.00,
+    "couleur": "BLANC",
+    "cepage": "Sauvignon Blanc",
+    "notesDegustation": "[BIO] Minéral et agrumes."
+  },
+  {
+    "nom": "Slovakia, Princess Pesecká Leánka 2024, Pivnica Čajkov",
+    "region": "Slovaquie",
+    "prix": 89.00,
+    "couleur": "BLANC",
+    "cepage": "Pesecká Leánka",
+    "notesDegustation": "[NATURE] Sol volcanique. (N) Pêche, fruits à noyau, délicat, floral. (B) Bel équilibre, frais, digeste, long."
+  },
+  {
+    "nom": "Slovenska Istra, Malvazija 2021, Korenika & Moskon",
+    "region": "Slovénie",
+    "prix": 78.00,
+    "couleur": "BLANC",
+    "cepage": "Malvazija",
+    "notesDegustation": "(N) Wow... tellement aromatique (béton), litchi, cantaloup, fleur d'oranger. (B) Tellement complexe, fruitée +, long sur la salinité."
+  },
+  {
+    "nom": "Stellenbosch, Provenance Chenin blanc 2024, L'Avenir",
+    "region": "Afrique du Sud",
+    "prix": 82.00,
+    "couleur": "BLANC",
+    "cepage": "Chenin Blanc",
+    "notesDegustation": "[DURABLE] Chenin classique."
+  },
+  {
+    "nom": "Terre Siciliane, C23 Catarratto 2023, Contrada Valle",
+    "region": "Italie",
+    "prix": 67.00,
+    "couleur": "BLANC",
+    "cepage": "Catarratto",
+    "notesDegustation": "[BIO] (N) Orange, abricot, oxydatif, salin, thé. (B) Belle rondeur, camomille, amande, côté laiteux. Très bon!"
+  },
+  {
+    "nom": "Terre Siciliane, Insolia 2023, Azienda Vinicola Biscaris",
+    "region": "Italie",
+    "prix": 72.00,
+    "couleur": "BLANC",
+    "cepage": "Insolia",
+    "notesDegustation": "(N) Rond, minéral. (B) MIAMMM, litchi, floral, pêche, melon miel."
+  },
+  {
+    "nom": "Toscana Bianco, Sant'Ellero 2023, La Ginestra",
+    "region": "Italie",
+    "prix": 76.00,
+    "couleur": "BLANC",
+    "cepage": "Assemblage",
+    "notesDegustation": "[NATURE] Blanc avec un peu de macération... presqu'un orange. Très bien, frais, végétal, croquant, fleur d'oranger."
+  },
+  {
+    "nom": "Twenty Mile Bench, Chardonnay 2020, Trois Moineaux",
+    "region": "ON, Canada",
+    "prix": 78.00,
+    "couleur": "BLANC",
+    "cepage": "Chardonnay",
+    "notesDegustation": "[RAISONNÉE] Rondeur, beurré, pop corn, yogourt. Fermentation en fût de chêne avec levures indigènes... ça paraît. Pêche blanche, un peu d'agrume, meringue..."
+  },
+  {
+    "nom": "Venezia Giulia, PG Rosa Pinot Grigio 2023, Ferlat",
+    "region": "Italie",
+    "prix": 76.00,
+    "couleur": "ORANGE",
+    "cepage": "Pinot Grigio",
+    "notesDegustation": "[NATURE] KOOLAID pour les grands!! Juteux, aromatique, rosé en raison du grain du pinot grigio. Rhubarbe, framboises confiturées..."
+  },
+  {
+    "nom": "Württemberg, Pur Blanc 2022, Leon Gold",
+    "region": "Allemagne",
+    "prix": 83.00,
+    "couleur": "BLANC",
+    "cepage": "Assemblage",
+    "notesDegustation": "[NATURE] (N) Aromatique, fin, floral, amande, rondeur. (B) Débile... super droit, salin, minéral, citron confit, rendu, long."
+  },
+  {
+    "nom": "Alsace, Mobylette 2022, Muller-Koeberlé",
+    "region": "France",
+    "prix": 87.00,
+    "couleur": "ORANGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[NATURE] Un autre Koolaid! 15 jours de macération. C'est super juicy, bonbon anglais, fraise-framboise, rhubarbe, cerise maraschino. Tout en légèreté."
+  },
+  {
+    "nom": "Chile, Viejo Zorro Semillón 2024, Jorge Cotal",
+    "region": "Chili",
+    "prix": 76.00,
+    "couleur": "ORANGE",
+    "cepage": "Sémillon",
+    "notesDegustation": "[NATURE] (N) Très végétal, bouquet d'herbes (estragon, mentholé), marmelade. (B) LOVE! Très original, hors de l'ordinaire."
+  },
+  {
+    "nom": "St-Paul-d'Abbotsford, Chapardeur Gris 2024, Coteau St-Paul",
+    "region": "QC, Canada",
+    "prix": 56.00,
+    "couleur": "ORANGE",
+    "cepage": "Pinot Gris",
+    "notesDegustation": "[BIO] (N) Smoky, végétal, noix de pin, abricot. (B) Smokiness, sucre résiduel mais ça paraît pas, acidité fraîche, complexe."
+  },
+  {
+    "nom": "Macedonia, Malagousia Skin Contact 2023, Aslanis",
+    "region": "Grèce",
+    "prix": 105.00,
+    "couleur": "ORANGE",
+    "cepage": "Malagousia",
+    "notesDegustation": "[NATURE] (N) Écorce d'orange, abricot séché, coing, herbes aromatiques, fleurs blanches, jasmin. (B) Tannins doux, structure, acidité vive, long en bouche. Sublime!"
+  },
+  {
+    "nom": "Österreich, Mulatschak 2023, Meinklang",
+    "region": "Autriche",
+    "prix": 67.00,
+    "couleur": "ORANGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[NATURE-BIODY] (N) Full bonbon à la pêche, petite note épicée. (B) Acidité vive, orange confite, marmelade, exotique."
+  },
+  {
+    "nom": "Terre Siciliane, Modus Bibendi Macerato 2021, Elios",
+    "region": "Italie",
+    "prix": 93.00,
+    "couleur": "ORANGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[NATURE] (N) Abricots séchés, confiturés. (B) Thé blanc, poivré, jus d'orange, acidité fraîche, long en bouche. Crowd pleaser."
+  },
+  {
+    "nom": "Vin de France, Ginger 2022, Mr & Mrs Théo",
+    "region": "France",
+    "prix": 74.00,
+    "couleur": "ORANGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[BIODY] Pourrait tenir très bien au verre. Texturé, coloré +, mâche, tannins présents mais pas trop asséchants. Abricots séchés, mangue, amertume en finale."
+  },
+  {
+    "nom": "Ulverton, Tomber en Orange 2024, Les Vallons de Wadleigh",
+    "region": "QC, Canada",
+    "prix": 50.00,
+    "couleur": "ORANGE",
+    "cepage": "Frontenac Blanc",
+    "notesDegustation": "[BIO/NATURE] (N) Oxydatif, fruits blancs, mandarine, sucre d'orge, zeste d'agrumes confit, BALSAMIQUE BLANC ++. (B) Super délicate, tisane, avec un peu de rondeur en finale."
+  },
+  {
+    "nom": "Lisboa, Vinho Rosado 2023, Vinhas Do Carneiro",
+    "region": "Portugal",
+    "prix": 63.00,
+    "couleur": "ROSE",
+    "cepage": "Assemblage",
+    "notesDegustation": "Assez aromatique, fruits rouges, bonne acidité."
+  },
+  {
+    "nom": "Luberon, Les Jardins d'Edem, Mas Edem",
+    "region": "France",
+    "prix": 52.00,
+    "couleur": "ROSE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[BIO] Pour ceux qui aiment les Côtes de Provence, léger."
+  },
+  {
+    "nom": "Rioja, Clarete 2023, Alegre Valgañón",
+    "region": "Espagne",
+    "prix": 66.00,
+    "couleur": "ROSE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[BIO] Vin gris, (N) expressif, mais en finesse, (B) très minéral, crisp, salin, macération ressentie, melon, pêche, petite chaleur. Très bien, assez léger."
+  },
+  {
+    "nom": "Lanoraie, Rives Frontenac Gris 2023, Lieux Communs",
+    "region": "QC, Canada",
+    "prix": 73.00,
+    "couleur": "ROSE",
+    "cepage": "Frontenac Gris",
+    "notesDegustation": "[NATURE] Frontenac gris 100%, non filtré, sans intrants. (N) Épices, vin d'automne, fleurs mortes, terre humide. (B) Acidité rhubarbe, tendue, pomme, juteux."
+  },
+  {
+    "nom": "Österreich, Zini 2024, Andreas Ziniel - 1 LITRE",
+    "region": "Autriche",
+    "prix": 89.00,
+    "couleur": "ROSE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[NATURE] Fresh, juicy, salade de fruits, cerises marasquin bien croquante, punch aux fruits... vraiment trop trop fun, pis c'est un litre! :D"
+  },
+  {
+    "nom": "Saint-Armand, Rosé 2024, Vignoble Pigeon Hill",
+    "region": "QC, Canada",
+    "prix": 78.00,
+    "couleur": "ROSE",
+    "cepage": "Marquette",
+    "notesDegustation": "[BIO] Rosé de saignée. (N) Délicat, floral, pommettes confites. (B) Balsam, acidité vive, rhubarbe, bonbon anglais, vraiment vibe bg rosé (pinot noir)."
+  },
+  {
+    "nom": "Saint-Hyacinthe, Soir de Funk Eurodance 2023, Nordiq",
+    "region": "QC, Canada",
+    "prix": 52.00,
+    "couleur": "ROSE",
+    "cepage": "Frontenac noir et blanc, Maréchal Foch",
+    "notesDegustation": "[NATURE] Rosé foncé perlant. Arômes de cerise, mûre et violette."
+  },
+  {
+    "nom": "Aconcagua Andes, Ajayu Carménère 2021",
+    "region": "Chili",
+    "prix": 82.00,
+    "couleur": "ROUGE",
+    "cepage": "Carménère",
+    "notesDegustation": "[NATURE] (N) Épicé, violette. (B) Volume, super mûr, chaud, épicé, corps moyen, fruits bleus et noirs confiturés, acidité fraîche. Ça goûte le kir."
+  },
+  {
+    "nom": "Argentina, Pipa Vista Flores Criolla 2023",
+    "region": "Argentine",
+    "prix": 74.00,
+    "couleur": "ROUGE",
+    "cepage": "Criolla",
+    "notesDegustation": "[BIO] Aromatique, fin, lilas, cerises, fraises des bois. Tannins lisses, juicy, finale en fraîcheur. C'est vraiment l'fun comme rouge, super léger! Servir un peu frais."
+  },
+  {
+    "nom": "Amarone della Valpolicella, Cavolo 2020",
+    "region": "Italie",
+    "prix": 144.00,
+    "couleur": "ROUGE",
+    "cepage": "Corvina, Rondinella",
+    "notesDegustation": "[DURABLE] Frais, digeste quand même pour un Amarone. Tanins secs, longs, épices douces, confiture de framboise, cherry pie ++, finale sur la vanille."
+  },
+  {
+    "nom": "Beaune 1er Cru Clos des Courchereaux 2013, Louis Jadot",
+    "region": "France (Bourgogne)",
+    "prix": 168.00,
+    "couleur": "ROUGE",
+    "cepage": "Pinot Noir",
+    "notesDegustation": "(N) Vieux cuir, belle évolution, terreux, parfait moment pour l'apprécier. (B) Un peu de tannins, feuilles de framboisier, élevage, très gastro."
+  },
+  {
+    "nom": "Bourgogne, Pinot noir 2023, Lucien Muzard & Fils",
+    "region": "France",
+    "prix": 95.00,
+    "couleur": "ROUGE",
+    "cepage": "Pinot Noir",
+    "notesDegustation": "Situé à Santenay, des beaux vins de Bourgogne. Cerise, framboise, floral. Tannins structurés."
+  },
+  {
+    "nom": "Brigham, Les Beaux Jus 3 Frontenacs 2023",
+    "region": "QC, Canada (Vignoble de la Bauge)",
+    "prix": 62.00,
+    "couleur": "ROUGE",
+    "cepage": "Frontenacs",
+    "notesDegustation": "[NATURE] (N) Fruits rouges et bleus, floral, pot pourri. (B) Acidité presque vive, fruité, tannins présents mais soyeux, vibe bojo. Servir frais."
+  },
+  {
+    "nom": "Brunello di Montalcino, Il Picchio 2017",
+    "region": "Italie",
+    "prix": 124.00,
+    "couleur": "ROUGE",
+    "cepage": "Sangiovese",
+    "notesDegustation": "[NATURE] (N) Réduit, vanillé... miam. Réglisse, raisins secs."
+  },
+  {
+    "nom": "Cirò Rosso Classico Superiore, Riserva 2019",
+    "region": "Italie",
+    "prix": 87.00,
+    "couleur": "ROUGE",
+    "cepage": "Gaglioppo",
+    "notesDegustation": "[BIO] Tannins moyens +, acidité fraîche, corps moyen, tannins souples."
+  },
+  {
+    "nom": "Chianti Superiore, Ottomani 2023 - MAGNUM",
+    "region": "Italie",
+    "prix": 115.00,
+    "couleur": "ROUGE",
+    "cepage": "Sangiovese, Canaiolo",
+    "notesDegustation": "[NATURE] Format Magnum."
+  },
+  {
+    "nom": "Chinon, Les Terrasses Cabernet franc 2023, Lambert - MAGNUM",
+    "region": "France",
+    "prix": 134.00,
+    "couleur": "ROUGE",
+    "cepage": "Cabernet Franc",
+    "notesDegustation": "[BIO/BIODY] (N) Fruits rouges bien mûrs, signature poivron typique cab franc. (B) Vin gourmand, acidité vive, juicy, croquant, tannins veloutés."
+  },
+  {
+    "nom": "Epanomi, Syrah 2023, Ktima Gerovassiliou",
+    "region": "Grèce",
+    "prix": 111.00,
+    "couleur": "ROUGE",
+    "cepage": "Syrah",
+    "notesDegustation": "[BIO] Corsé, épicé, chocolaté, vanillé. Fût bien présent, toasté. Cerise noire, prune/pruneau."
+  },
+  {
+    "nom": "Fleurie, Indigène 2023, Domaine Grégoire Hoppenot",
+    "region": "France (Beaujolais)",
+    "prix": 90.00,
+    "couleur": "ROUGE",
+    "cepage": "Gamay",
+    "notesDegustation": "[BIO] Remplace le morgon. Gamay relativement corsé, bonne chaleur, épicé. Violette, finale sur l'acidité. Servir un peu frais."
+  },
+  {
+    "nom": "Hatley, Le Soleil S'En Est Mêlé 2024, Domaine Bergeville",
+    "region": "QC, Canada",
+    "prix": 69.00,
+    "couleur": "ROUGE",
+    "cepage": "Frontenac noir, marquette, riesling, gamay",
+    "notesDegustation": "[BIODY] (N) Jus de fruits, confiture de framboises. (B) Goutte le jus de fruits, punch. Acidité fraîche, léger, vin de soif! Très très bon!!"
+  },
+  {
+    "nom": "Hemmingford, Artea Meritage 2023",
+    "region": "QC, Canada",
+    "prix": 75.00,
+    "couleur": "ROUGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[BIO]"
+  },
+  {
+    "nom": "Hemmingford, Pinot noir 2024",
+    "region": "QC, Canada",
+    "prix": 55.00,
+    "couleur": "ROUGE",
+    "cepage": "Pinot Noir",
+    "notesDegustation": "[BIO]"
+  },
+  {
+    "nom": "Italia, Vino da Sete Rosso 2024 - 1 LITRE",
+    "region": "Italie",
+    "prix": 73.00,
+    "couleur": "ROUGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[NATURE] Frais, végétal, fraise, juicy, feuille de tomate, finale végétale. SERVIR FRAIS ABSOLUMENT."
+  },
+  {
+    "nom": "Langhe Rosso, Adesso 2022, Azienda Agricola Campàro",
+    "region": "Italie",
+    "prix": 69.00,
+    "couleur": "ROUGE",
+    "cepage": "Nebbiolo, Barbera",
+    "notesDegustation": "[BIO]"
+  },
+  {
+    "nom": "Languedoc, L'Emblématique 1936 2022, Mas de Lunés",
+    "region": "France",
+    "prix": 71.00,
+    "couleur": "ROUGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[BIO] Galets roulés! (N) Deep dark fruits, super mûr, épicé, poivré. (B) Tanins bien présents, bois ressenti, violette, cassis, prune, confiture!!"
+  },
+  {
+    "nom": "Mallorca, Sincronia 2023, Mesquida Mora",
+    "region": "Espagne",
+    "prix": 75.00,
+    "couleur": "ROUGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[BIO] (N) Côté viandeux, poivré, eucalyptus. (B) Très light, mais poivré au goût. Côté poivron vert, végétal."
+  },
+  {
+    "nom": "Makedonia, Limnio 2022, Aslanis Family Winery",
+    "region": "Grèce",
+    "prix": 87.00,
+    "couleur": "ROUGE",
+    "cepage": "Limnio",
+    "notesDegustation": "Tannins moyens +, acidité fraîche, corps moyen, tannins souples."
+  },
+  {
+    "nom": "Margaux Cru Bourgeois 2016, Château Paveil de Luze",
+    "region": "France (Bordeaux)",
+    "prix": 139.00,
+    "couleur": "ROUGE",
+    "cepage": "Cabernet Sauvignon, Merlot",
+    "notesDegustation": "Classique Bordeaux."
+  },
+  {
+    "nom": "Méditerranée, Auro Rousso 2023, Château du Seuil",
+    "region": "France",
+    "prix": 53.00,
+    "couleur": "ROUGE",
+    "cepage": "Assemblage",
+    "notesDegustation": "[BIO] (N) Aromatique, sur le fruit, confiture de fraise, cassis. (B) Fun, quand même du corps, finale un peu végétale, tannins serrés."
+  },
+  {
+    "nom": "Montepulciano d'Abruzzo, 2022, Valori",
+    "region": "Italie",
+    "prix": 64.00,
+    "couleur": "ROUGE",
+    "cepage": "Montepulciano",
+    "notesDegustation": "[BIO] (N) Corsé, boisé, fruits mûrs, épicé. (B) Tanins longs et collants, dattes et fruits séchés."
+  },
+  {
+    "nom": "Montsant, Les Comes d'Orto 2021, OrtoVins",
+    "region": "Espagne",
+    "prix": 117.00,
+    "couleur": "ROUGE",
+    "cepage": "Garnacha, Cariñena",
+    "notesDegustation": "[BIODY] (N) Corsé, épicé, viandeux. Fruits rouges, balsam, smoky. (B) Un peu austère, structuré, tannins soutenus et mûrs, acidité présente et longue finale minérale."
+  },
+  {
+    "nom": "Moselle, Primitiae Pinot noir 2023, Rémi Gauthier",
+    "region": "France",
+    "prix": 89.00,
+    "couleur": "ROUGE",
+    "cepage": "Pinot Noir",
+    "notesDegustation": "[BIODY] 6 mois vieux fûts, vendange égrapée. (N) fin, cerise. (B) Tannins fins et secs, acidité vive, cerise, poivre, fruits rouges croquants, tout en fraîcheur."
+  },
+  {
+    "nom": "Okanagan Falls, Neighbour 2021, Plot Wines",
+    "region": "BC, Canada",
+    "prix": 86.00,
+    "couleur": "ROUGE",
+    "cepage": "Bordeaux Blend",
+    "notesDegustation": "CS, Mt, Malbec, Tempranillo. Full body, tannins bien intégrés, élevage foudre."
+  },
+  {
+    "nom": "Paarl, Samsara Syrah 2018, Avondale",
+    "region": "Afrique du Sud",
+    "prix": 97.00,
+    "couleur": "ROUGE",
+    "cepage": "Syrah",
+    "notesDegustation": "[BIO] (N) Poivre blanc, boisé, violette, fruits sauvage, zeste d'orange. (B) Corsé, beaucoup de volume, notes de prune, cerise, clou de girofle, cannelle, épices douces, mûre."
+  },
+  {
+    "nom": "Puisseguin Saint-Émilion, Moulin Saint-Clair 2022",
+    "region": "France",
+    "prix": 88.00,
+    "couleur": "ROUGE",
+    "cepage": "Merlot, Cabernet Franc",
+    "notesDegustation": "[RAISONNÉE] 12-14 mois de fût. (N) Fruits noirs, épices. (B) Acidité fraîche, profil rond, équilibré. Tannins bien intégrés."
+  },
+  {
+    "nom": "Ribeira Sacra, Veitureira 2022, Abadía da Cova",
+    "region": "Espagne",
+    "prix": 128.00,
+    "couleur": "ROUGE",
+    "cepage": "Mencía",
+    "notesDegustation": "(V) Violacé. (N) Cuir, viandeux, fruits bleus, style cf/pn de la Loire. (B) Ça jute, acidité présente, croquant fruits bleus, bois bien intégré. Bonbon anglais, bleuet/mûre/prune."
+  },
+  {
+    "nom": "Saint-Hyacinthe, Carton rouge 2023, Nordiq",
+    "region": "QC, Canada",
+    "prix": 47.00,
+    "couleur": "ROUGE",
+    "cepage": "Assemblage Hybride",
+    "notesDegustation": "Vin rouge de soif mix blanc et rouge. Arômes généreux de petits fruits rouges, extra-sec."
+  },
+  {
+    "nom": "Saint-Joseph, Sylvain Pure Syrah 2022, Domaine des Pierres Sèches",
+    "region": "France",
+    "prix": 117.00,
+    "couleur": "ROUGE",
+    "cepage": "Syrah",
+    "notesDegustation": "100% Syrah, 12 mois fût. Végétal, vanillé, corsé, café, tiramisu, fruits rouges et noirs mûrs, lavande, poivre, pierre concassée, tannins moyens +."
+  },
+  {
+    "nom": "Swartland, Syrah - Grenache - Carignan 2022, Rall",
+    "region": "Afrique du Sud",
+    "prix": 117.00,
+    "couleur": "ROUGE",
+    "cepage": "Syrah, Grenache, Carignan",
+    "notesDegustation": "75% syrah. (N) Poivre blanc, mine de crayon, violette. (B) Belle puissance, fruits rouges et noirs, tannins du bois (bien intégré), vanille, forêt noire."
+  },
+  {
+    "nom": "Terre Siciliane, Nerello Mascalese 2022, Luna Gaia",
+    "region": "Italie",
+    "prix": 60.00,
+    "couleur": "ROUGE",
+    "cepage": "Nerello Mascalese",
+    "notesDegustation": "[NATURE] (N) Cerise noire, chocolat noir, cannelle. (B) Balsam, tannins mûrs mais bien fondus, tabac. Acidité présente. Somme toute corps moyen."
+  },
+  {
+    "nom": "Toscana, Sambrena Syrah 2022, Tenuta La Novella",
+    "region": "Italie",
+    "prix": 84.00,
+    "couleur": "ROUGE",
+    "cepage": "Syrah",
+    "notesDegustation": "[BIODY] Cerise, framboise, poivre noir, graphite, acidité fraîche, ample et gourmand, tannins soutenus, finale persistante."
+  },
+  {
+    "nom": "Touraine, Rouge Baiser Gamay 2023",
+    "region": "France",
+    "prix": 47.00,
+    "couleur": "ROUGE",
+    "cepage": "Gamay",
+    "notesDegustation": "Servir frais. Vin fruité, digeste, framboise, cerise noire."
+  },
+  {
+    "nom": "Trentino, Cabernet sauvignon 2021, Bottega Vinai",
+    "region": "Italie",
+    "prix": 68.00,
+    "couleur": "ROUGE",
+    "cepage": "Cabernet Sauvignon",
+    "notesDegustation": ""
+  },
+  {
+    "nom": "Turi Rosso, Eloro Nero d'Avola 2024, Salvatore Marino",
+    "region": "Italie",
+    "prix": 82.00,
+    "couleur": "ROUGE",
+    "cepage": "Nero d'Avola",
+    "notesDegustation": "[BIO/BIODY] Vin rouge débordant de cerises rouges et d'herbes douces semblable à un Sangiovese toscan. Poivre blanc, cerise aigre, cuir, terre, minéraux."
+  },
+  {
+    "nom": "València, Soplo Garnacha 2024, Rafael Cambra",
+    "region": "Espagne",
+    "prix": 43.00,
+    "couleur": "ROUGE",
+    "cepage": "Garnacha",
+    "notesDegustation": "[RAISONNÉE] 4 mois foudre français."
+  },
+  {
+    "nom": "Valle de Uco, Terroir Malbec 2022, Altos Las Hormigas",
+    "region": "Argentine",
+    "prix": 76.00,
+    "couleur": "ROUGE",
+    "cepage": "Malbec",
+    "notesDegustation": "1000m d'altitude = fraîcheur. Pas de fût. (N) Fruits bleus et noirs : mûre, cassis, prune, confiture de bleuets. (B) Belle élégance, fraîcheur et fruit."
+  },
+  {
+    "nom": "Victoria, Old Dog, New Tricks 2023, Defialy",
+    "region": "Australie",
+    "prix": 95.00,
+    "couleur": "ROUGE",
+    "cepage": "Sangiovese, Grenache Blanc",
+    "notesDegustation": "[BIO/NATURE] Eucalyptus, sur le fruit, minéral, cassis, jus de prune. Servir un peu frais."
+  },
+  {
+    "nom": "Vin de France, Pagaille 2024, Lestignac",
+    "region": "France",
+    "prix": 80.00,
+    "couleur": "ROUGE",
+    "cepage": "Assemblage Funky",
+    "notesDegustation": "[BIO/NATURE] Si quelqu'un demande pour un 'blouge'! (N) jus de cerises, eucalyptus. (B) Acidité vive, tannins souples, fruits rouges, fruit forward."
+  },
+  {
+    "nom": "Vin de France, Punkahontas Syrah 2023, Ugo Lestelle",
+    "region": "France",
+    "prix": 90.00,
+    "couleur": "ROUGE",
+    "cepage": "Syrah",
+    "notesDegustation": "[BIO] Schiste et argile, semi-carbo 6 semaines inox, 13 mois sur lies fines."
+  },
+  {
+    "nom": "Maury blanc, Vintage 2022, Mas Amiel",
+    "region": "France",
+    "prix": 121.00,
+    "couleur": "LIQUOREUX",
+    "cepage": "Grenache Gris",
+    "notesDegustation": "[BIODY/NATURE]"
+  },
+  {
+    "nom": "Macvin du Jura 2022, Domaine des Carlines",
+    "region": "France",
+    "prix": 117.00,
+    "couleur": "LIQUOREUX",
+    "cepage": "Savagnin",
+    "notesDegustation": "[BIO] (N) Tellement exhubérant!! Complexe, poivré, miel, thé, paille. (B) Sublime, full sur le fruit, ça goûte l'hydromel!"
+  },
+  {
+    "nom": "Costières de Nîmes, Bonbon Sauvage Vermouth Ambré",
+    "region": "France",
+    "prix": 75.00,
+    "couleur": "LIQUOREUX",
+    "cepage": "Grenache, Mourvèdre",
+    "notesDegustation": "Vermouth ambré/rosé. (N) Bouquet d'épices douces... Roobois, chai. (B) Malade... complexe, un peu végétal en finale, à déguster avec un glaçon ou bien frais."
+  },
+  {
+    "nom": "Piémont, Vermouth di Torino Bianco",
+    "region": "Italie",
+    "prix": 110.00,
+    "couleur": "LIQUOREUX",
+    "cepage": "Moscato",
+    "notesDegustation": "[BIO] Vermouth doux, à base de moscato bio millésimé, mielleux, sucre fun et pas abusé, petite amertume, poivre blanc. Super pour accompagner fromages!!"
+  },
+  {
+    "nom": "Barolo, Chinato, Erbaluna",
+    "region": "Italie",
+    "prix": 172.00,
+    "couleur": "LIQUOREUX",
+    "cepage": "Nebbiolo",
+    "notesDegustation": "Vin aromatisé et fortifié à base de Barolo DOCG! De la BOMBE! Tannins, épices (girofle, cannelle), cerise, acidité fraîche. Vraiment pas lourd pour un moelleux."
+  },
+  {
+    "nom": "Porto, Tawny 10 ans, Quinta da Gaivosa - 500ml",
+    "region": "Portugal",
+    "prix": 104.00,
+    "couleur": "LIQUOREUX",
+    "cepage": "Assemblage Porto",
+    "notesDegustation": "Classique Tawny 10 ans."
+  },
+  {
+    "nom": "Porto, Tawny Lagar de Granito, Pacheco",
+    "region": "Portugal",
+    "prix": 78.00,
+    "couleur": "LIQUOREUX",
+    "cepage": "Assemblage Porto",
+    "notesDegustation": "Tawny."
+  },
+  {
+    "nom": "Rivesaltes Tuilé, Château Les Pins Primage 2020",
+    "region": "France",
+    "prix": 83.00,
+    "couleur": "LIQUOREUX",
+    "cepage": "Grenache",
+    "notesDegustation": "Moelleux rouge."
+  }
+]

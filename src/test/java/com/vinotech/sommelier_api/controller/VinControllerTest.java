@@ -70,7 +70,7 @@ class VinControllerTest {
                 .prix(new BigDecimal("60.00"))
                 .region("Champagne")
                 .notesDegustation("Effervescent avec des notes de pomme")
-                .couleur(CouleurVin.BULLE)
+                .couleur(CouleurVin.EFFERVESCENT)
                 .cepage("Pinot Noir")
                 .build();
     }

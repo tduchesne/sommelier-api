@@ -21,13 +21,13 @@ public class Vin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // -> SERIAL/PRIMARY KEY
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 100)
     private String nom;
 
     @Column(precision = 10, scale = 2)
     private BigDecimal prix;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 100)
     private String region;
 
     @Column(name = "notes_degustation", columnDefinition = "TEXT")
@@ -36,7 +36,7 @@ public class Vin {
     @Enumerated(EnumType.STRING)
     private CouleurVin couleur;
 
-    @Column(length = 50)
+    @Column(length = 100)
     private String cepage;
 
     /**

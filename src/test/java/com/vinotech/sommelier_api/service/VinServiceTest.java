@@ -64,7 +64,7 @@ class VinServiceTest {
                 .prix(new BigDecimal("60.00"))
                 .region("Champagne")
                 .notesDegustation("Effervescent avec des notes de pomme")
-                .couleur(CouleurVin.BULLE)
+                .couleur(CouleurVin.EFFERVESCENT)
                 .cepage("Pinot Noir")
                 .build();
     }
@@ -444,7 +444,7 @@ class VinServiceTest {
                 Vin.builder().id(2L).nom("Blanc").region("Test").couleur(CouleurVin.BLANC).build(),
                 Vin.builder().id(3L).nom("Rosé").region("Test").couleur(CouleurVin.ROSE).build(),
                 Vin.builder().id(4L).nom("Orange").region("Test").couleur(CouleurVin.ORANGE).build(),
-                Vin.builder().id(5L).nom("Bulle").region("Test").couleur(CouleurVin.BULLE).build()
+                Vin.builder().id(5L).nom("Bulle").region("Test").couleur(CouleurVin.EFFERVESCENT).build()
         );
         when(vinRepository.findAll()).thenReturn(vins);
 
@@ -455,7 +455,7 @@ class VinServiceTest {
         assertThat(result).hasSize(5);
         assertThat(result).extracting("couleur")
                 .containsExactly(CouleurVin.ROUGE, CouleurVin.BLANC, CouleurVin.ROSE, 
-                        CouleurVin.ORANGE, CouleurVin.BULLE);
+                        CouleurVin.ORANGE, CouleurVin.EFFERVESCENT);
     }
 
     // ==================== findById() Method Tests ====================
