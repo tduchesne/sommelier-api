@@ -271,9 +271,9 @@ class VinServiceTest {
     @DisplayName("Should save vin with max length strings")
     void shouldSaveVinWithMaxLengthStrings() {
         // Given
-        String maxNom = "A".repeat(50);
-        String maxRegion = "B".repeat(50);
-        String maxCepage = "C".repeat(50);
+        String maxNom = "A".repeat(100);
+        String maxRegion = "B".repeat(100);
+        String maxCepage = "C".repeat(100);
         String longNotes = "D".repeat(5000);
 
         Vin vin = Vin.builder()
@@ -299,9 +299,9 @@ class VinServiceTest {
         Vin result = vinService.save(vin);
 
         // Then
-        assertThat(result.getNom()).hasSize(50);
-        assertThat(result.getRegion()).hasSize(50);
-        assertThat(result.getCepage()).hasSize(50);
+        assertThat(result.getNom()).hasSize(100);
+        assertThat(result.getRegion()).hasSize(100);
+        assertThat(result.getCepage()).hasSize(100);
         assertThat(result.getNotesDegustation()).hasSize(5000);
     }
 
