@@ -3,71 +3,71 @@ package com.vinotech.sommelier_api.service;
 import com.vinotech.sommelier_api.model.CouleurVin;
 import com.vinotech.sommelier_api.model.Vin;
 import com.vinotech.sommelier_api.repository.VinRepository;
+import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import jakarta.persistence.criteria.Predicate;
-import org.springframework.data.jpa.domain.Specification;
-import java.util.ArrayList;
 
-@Service // Indique à Spring que c'est une classe de logique métier
+@Service
 public class VinService {
 
     private final VinRepository vinRepository;
 
-    // Injection de Dépendance : Spring fournit automatiquement l'implémentation du Repository
     public VinService(VinRepository vinRepository) {
         this.vinRepository = vinRepository;
     }
 
-    /**
-     * Enregistre ou met à jour un vin dans la base de données.
-     */
     public Vin save(Vin vin) {
-        // Le Repository traduit l'opération en SQL (INSERT ou UPDATE)
         return vinRepository.save(vin);
     }
 
-    /**
-     * Récupère tous les vins.
-     */
     public List<Vin> findAll() {
         return vinRepository.findAll();
     }
 
-    /**
-     * Récupère un vin par son ID.
-     */
     public Optional<Vin> findById(Long id) {
         return vinRepository.findById(id);
     }
 
     /**
-     * Recherche avancée avec critères dynamiques.
+     * Recherche avancée avec critères dynamiques et pagination.
      */
     public Page<Vin> searchVins(CouleurVin couleur, Double minPrix, Double maxPrix, String region, Pageable pageable) {
-        org.springframework.data.jpa.domain.Specification<Vin> spec = (root, query, criteriaBuilder) -> {
-            java.util.List<jakarta.persistence.criteria.Predicate> predicates = new java.util.ArrayList<>();
+        Specification<Vin> spec = (root, query, criteriaBuilder) -> {
+            List<Predicate> predicates = new ArrayList<>();
 
+            // 1. Filtre Couleur
             if (couleur != null) {
                 predicates.add(criteriaBuilder.equal(root.get("couleur"), couleur));
             }
+
+            // 2. Filtre Prix Min (Conversion Double -> BigDecimal)
             if (minPrix != null) {
-                predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("prix"), minPrix));
-            }
-            if (maxPrix != null) {
-                predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("prix"), maxPrix));
-            }
-            if (region != null && !region.isEmpty()) {
-                predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("region")), "%" + region.toLowerCase() + "%"));
+                predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("prix"), BigDecimal.valueOf(minPrix)));
             }
 
-            return criteriaBuilder.and(predicates.toArray(new jakarta.persistence.criteria.Predicate[0]));
+            // 3. Filtre Prix Max (Conversion Double -> BigDecimal)
+            if (maxPrix != null) {
+                predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("prix"), BigDecimal.valueOf(maxPrix)));
+            }
+
+            // 4. Filtre Région
+            if (region != null && !region.isEmpty()) {
+                predicates.add(criteriaBuilder.like(
+                        criteriaBuilder.lower(root.get("region")),
+                        "%" + region.toLowerCase() + "%"
+                ));
+            }
+
+            return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
 
-        // On passe l'objet pageable au repository qui gère ça nativement
         return vinRepository.findAll(spec, pageable);
     }
 }
