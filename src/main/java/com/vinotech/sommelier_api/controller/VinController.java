@@ -5,7 +5,8 @@ import com.vinotech.sommelier_api.model.Vin;
 import com.vinotech.sommelier_api.service.VinService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.util.List;
@@ -55,13 +56,14 @@ public class VinController {
      * Tous les paramètres sont optionnels.
      */
     @GetMapping("/search")
-    public List<Vin> searchVins(
+    public Page<Vin> searchVins(
             @RequestParam(required = false) CouleurVin couleur,
             @RequestParam(required = false) Double minPrix,
             @RequestParam(required = false) Double maxPrix,
-            @RequestParam(required = false) String region
+            @RequestParam(required = false) String region,
+            Pageable pageable
     ) {
-        return vinService.searchVins(couleur, minPrix, maxPrix, region);
+        return vinService.searchVins(couleur, minPrix, maxPrix, region, pageable);
     }
 
 }
