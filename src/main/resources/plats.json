@@ -2,131 +2,183 @@
   {
     "nom": "Sandwich Tempeh",
     "ingredients": "Focaccia maison, galette de tempeh grillé, marmelade champignon et poireaux, confit d'oignon et canneberge, provolone fumé végan, roquette.",
-    "allergenes": "Soja, Gluten"
+    "allergenes": "Soja, Gluten",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Sandwich Porc Effiloché",
     "ingredients": "Focaccia maison, purée de champignon et ail noir, porc effiloché maison, mayonnaise à la sauge, roquette.",
-    "allergenes": "Viande, Produits laitiers, Gluten, Moutarde"
+    "allergenes": "Viande, Produits laitiers, Gluten, Moutarde",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Sandwich Gravlax Saumon",
     "ingredients": "Focaccia maison (servie tiède), ricotta fouettée, gravlax de saumon maison, oignons marinés, roquette.",
-    "allergenes": "Gluten, Produits laitiers, Poisson"
+    "allergenes": "Gluten, Produits laitiers, Poisson",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Tartare de Truite",
     "ingredients": "Truite steelhead, salsa de maïs grillés, tomates séchées, câpres, échalotes, yogourt au maïs, feta, amandes effilées.",
-    "allergenes": "Noix, Poisson, Gluten, Produits laitiers"
+    "allergenes": "Noix, Poisson, Gluten, Produits laitiers",
+    "allergenesModifiables": "Noix, Gluten",
+    "optionRemplacement": "Noix: Enlever les amandes. Gluten: Enlever les croûtons."
   },
   {
     "nom": "Tartare de Cerf",
     "ingredients": "Filet mignon de cerf, purée de champignon à l’ail noir, marmelade champignon et poireaux, topinambour frit.",
-    "allergenes": "Viande, Produits laitiers, Gluten"
+    "allergenes": "Viande, Produits laitiers, Gluten",
+    "allergenesModifiables": "Gluten",
+    "optionRemplacement": "Gluten: Enlever les croûtons."
   },
   {
     "nom": "Choux de Bruxelles Façon César",
     "ingredients": "Choux rôtis, vinaigrette (mayo, ail noir, câpres, miso, citron), pancetta, croûtons de focaccia, Louis d’or.",
-    "allergenes": "Soja, Produits laitiers, Gluten, Oeufs, Viande"
+    "allergenes": "Soja, Produits laitiers, Gluten, Oeufs, Viande",
+    "allergenesModifiables": "Gluten, Viande",
+    "optionRemplacement": "Gluten: Enlever les croûtons. Viande: Enlever la pancetta."
   },
   {
     "nom": "Endives Braisées",
     "ingredients": "Endives braisées érable/vinaigre, ricotta fouettée, pancetta, graines de tournesol, herbes fraîches.",
-    "allergenes": "Produits laitiers, Viande"
+    "allergenes": "Produits laitiers, Viande",
+    "allergenesModifiables": "Viande",
+    "optionRemplacement": "Viande: Enlever la pancetta."
   },
   {
     "nom": "Burratina",
     "ingredients": "Petite burrata (125g), confit d’oignon/canneberge, gel betterave, prosciutto, amande effilée, pain multigrains.",
-    "allergenes": "Produits laitiers, Viande, Gluten, Noix"
+    "allergenes": "Produits laitiers, Viande, Gluten, Noix",
+    "allergenesModifiables": "Viande, Gluten, Noix",
+    "optionRemplacement": "Viande: Enlever le prosciutto. Gluten: Enlever pain. Noix: Enlever amandes."
   },
   {
     "nom": "Terrine Foie Gras",
     "ingredients": "Terrine maison, gel camerise, ganache foie gras, pain brioché maison, noisettes.",
-    "allergenes": "Viande, Produits laitiers, Oeufs, Noix, Gluten"
+    "allergenes": "Viande, Produits laitiers, Oeufs, Noix, Gluten",
+    "allergenesModifiables": "Oeufs, Noix, Gluten",
+    "optionRemplacement": "Noix: Enlever noisettes. Oeufs/Gluten: Enlever pain (NON RECOMMANDÉ)."
   },
   {
     "nom": "Brioche Escargot",
     "ingredients": "Brioche maison ail noir/herbes, escargots, Louis d’or. Beurre à l'ail noir.",
-    "allergenes": "Mollusques, Produits laitiers, Oeufs, Gluten"
+    "allergenes": "Mollusques, Produits laitiers, Oeufs, Gluten",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Étagé Céleri-Rave (Vegan)",
     "ingredients": "Gratin de céleri-rave au lait d’amande, croûte champignons/café, sauce crémeuse (avoine, amaretto, cardamome).",
-    "allergenes": "Noix"
+    "allergenes": "Noix",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Cavatellis",
     "ingredients": "Pâtes maison, sauce courgette/câpres/olives/échalotes/ail/citron, montée au Louis d’or. Feta, huile piquante.",
-    "allergenes": "Gluten, Oeufs, Produits laitiers"
+    "allergenes": "Gluten, Oeufs, Produits laitiers",
+    "allergenesModifiables": "Produits laitiers",
+    "optionRemplacement": "Produits laitiers: Enlever les fromages."
   },
   {
     "nom": "Boudin Maison",
     "ingredients": "Boudin (porc, crème, épices), chutney pomme/lardons, carottes rôties, sauce demi-glace au vin rouge.",
-    "allergenes": "Viande, Produits laitiers"
+    "allergenes": "Viande, Produits laitiers",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Joue de Boeuf",
     "ingredients": "Braisée, purée d’oignon caramélisé, cipollinis rôtis, sauce vin rouge, poireaux frits.",
-    "allergenes": "Viande, Produits laitiers"
+    "allergenes": "Viande, Produits laitiers",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Pappardelle al Ragù",
     "ingredients": "Pâtes fraîches larges, sauce ragu à l'agneau du Québec (légumes, vin rouge), Louis d’or, basilic.",
-    "allergenes": "Gluten, Oeufs, Viande, Produits laitiers"
+    "allergenes": "Gluten, Oeufs, Viande, Produits laitiers",
+    "allergenesModifiables": "Produits laitiers",
+    "optionRemplacement": "Produits laitiers: Enlever le Louis d'or."
   },
   {
     "nom": "Pieuvre",
     "ingredients": "Piperade (poivron/oignon), poêlée de chorizo, espuma de fromage bleu.",
-    "allergenes": "Fruits de mer, Produits laitiers, Viande"
+    "allergenes": "Fruits de mer, Produits laitiers, Viande",
+    "allergenesModifiables": "Viande",
+    "optionRemplacement": "Viande: Enlever le chorizo."
   },
   {
     "nom": "Croque Nordique",
     "ingredients": "Pain brioché, mousse de crevette et lardons, mayonnaise épicée.",
-    "allergenes": "Oeufs, Produits laitiers, Gluten, Fruits de mer, Viande"
+    "allergenes": "Oeufs, Produits laitiers, Gluten, Fruits de mer, Viande",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Pavlova Forêt Noir",
     "ingredients": "Meringue, crémeux chocolat, compotée griotte, ganache montée chocolat. SANS GLUTEN.",
-    "allergenes": "Produits laitiers, Oeufs"
+    "allergenes": "Produits laitiers, Oeufs",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Entremet Poire-Caramel",
     "ingredients": "Biscuit cuillère, ganache chocolat blanc/poire, mousse caramel, glaçage miroir caramel.",
-    "allergenes": "Gluten, Oeufs, Produits laitiers"
+    "allergenes": "Gluten, Oeufs, Produits laitiers",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Crème Catalana",
     "ingredients": "Compotée canneberge/vanille, crème catalana, sucre torché.",
-    "allergenes": "Oeufs, Produits laitiers"
+    "allergenes": "Oeufs, Produits laitiers",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Pain Doré Croustade aux Pommes",
     "ingredients": "Pain brioché, pomme caramel beurre salé, beurre de pomme, ganache montée chocolat blanc, avoine.",
-    "allergenes": "Oeufs, Produits laitiers, Gluten"
+    "allergenes": "Oeufs, Produits laitiers, Gluten",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Pain Doré Choco Banane",
     "ingredients": "Pain brioché, crémeux chocolat banane, ganache montée chocolat noir, banane torchée.",
-    "allergenes": "Oeufs, Produits laitiers, Gluten"
+    "allergenes": "Oeufs, Produits laitiers, Gluten",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Pain Doré Sucré Salé",
     "ingredients": "Pain brioché, chutney pomme/bacon (bière rousse), œuf poché, sauce foie gras.",
-    "allergenes": "Oeufs, Produits laitiers, Gluten, Viande"
+    "allergenes": "Oeufs, Produits laitiers, Gluten, Viande",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   },
   {
     "nom": "Oeuf Purgatoire",
     "ingredients": "Sauce tomate/poivron/olive, 2 œufs, feta, basilic, pain naan.",
-    "allergenes": "Oeufs, Gluten, Produits laitiers"
+    "allergenes": "Oeufs, Gluten, Produits laitiers",
+    "allergenesModifiables": "Oeufs, Gluten",
+    "optionRemplacement": "Gluten: Enlever pain naan. Oeufs: Retrait possible (non recommandé)."
   },
   {
     "nom": "Croissant Déjeuner",
     "ingredients": "Croissant, mayo béarnaise, frittata, bacon, tomate, roquette.",
-    "allergenes": "Gluten, Produits laitiers, Oeufs, Viande"
+    "allergenes": "Gluten, Produits laitiers, Oeufs, Viande",
+    "allergenesModifiables": "Viande",
+    "optionRemplacement": "Viande: Retirer le bacon."
   },
   {
     "nom": "Bagel Gravlax",
     "ingredients": "Bagel St-Viateur, ricotta fouettée, gravlax, oignon mariné.",
-    "allergenes": "Poisson, Gluten, Produits laitiers, Oeufs"
+    "allergenes": "Poisson, Gluten, Produits laitiers, Oeufs",
+    "allergenesModifiables": "",
+    "optionRemplacement": "Aucune option de remplacement."
   }
 ]

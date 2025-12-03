@@ -32,6 +32,14 @@ public class Plat {
     @Column(columnDefinition = "TEXT")
     private String allergenes;
 
+    // Liste des allergènes qu'on peut retirer (ex: "Gluten, Viande")
+    @Column(name = "allergenes_modifiables", columnDefinition = "TEXT")
+    private String allergenesModifiables;
+
+    // Texte explicatif pour le staff
+    @Column(name = "option_remplacement", columnDefinition = "TEXT")
+    private String optionRemplacement;
+
     /**
      * -- GETTER --
      *  Gets the wines associated with this plat.

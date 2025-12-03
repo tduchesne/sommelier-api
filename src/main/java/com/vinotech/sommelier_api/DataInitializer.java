@@ -26,32 +26,17 @@ public class DataInitializer {
         };
     }
 
-    /**
-     * Méthode générique pour charger des données depuis un JSON si la table est vide.
-     *
-     * @param repository Le repository JPA (VinRepository ou PlatRepository)
-     * @param filename Le nom du fichier JSON dans resources
-     * @param typeReference Le type de données pour Jackson (ex: List<Vin>)
-     * @param entityName Le nom de l'entité pour les logs (ex: "vins")
-     * @param <T> Le type de l'entité
-     */
     private <T> void loadDataIfEmpty(JpaRepository<T, Long> repository, String filename, TypeReference<List<T>> typeReference, String entityName) {
         if (repository.count() == 0) {
             System.out.println("📦 Base de " + entityName + " vide. Chargement...");
             try {
                 ObjectMapper mapper = new ObjectMapper();
                 InputStream inputStream = new ClassPathResource(filename).getInputStream();
-
-                // Conversion JSON -> Liste d'objets
                 List<T> items = mapper.readValue(inputStream, typeReference);
-
-                // Sauvegarde en base
                 repository.saveAll(items);
                 System.out.println("✅ " + items.size() + " " + entityName + " importés !");
-
             } catch (Exception e) {
                 System.out.println("❌ Erreur import " + entityName + " : " + e.getMessage());
-                // Ajout du stacktrace pour le debug (demandé par la revue de code)
                 e.printStackTrace();
             }
         } else {
