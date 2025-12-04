@@ -5,7 +5,7 @@
     "allergenes": "Soja, Gluten",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "LUNCH"
+    "typesMenu": ["LUNCH"]
   },
   {
     "nom": "Sandwich Porc Effiloché",
@@ -13,7 +13,7 @@
     "allergenes": "Viande, Produits laitiers, Gluten, Moutarde",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "LUNCH"
+    "typesMenu": ["LUNCH"]
   },
   {
     "nom": "Sandwich Gravlax Saumon",
@@ -21,7 +21,7 @@
     "allergenes": "Gluten, Produits laitiers, Poisson",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "LUNCH"
+    "typesMenu": ["LUNCH"]
   },
   {
     "nom": "Tartare de Truite",
@@ -29,7 +29,7 @@
     "allergenes": "Noix, Poisson, Gluten, Produits laitiers",
     "allergenesModifiables": "Noix, Gluten",
     "optionRemplacement": "Noix: Enlever les amandes. Gluten: Enlever les croûtons.",
-    "typesMenu": "BRUNCH,LUNCH,SOUPER,SNACK"
+    "typesMenu": ["BRUNCH", "LUNCH", "SOUPER", "SNACK"]
   },
   {
     "nom": "Tartare de Cerf",
@@ -37,7 +37,7 @@
     "allergenes": "Viande, Produits laitiers, Gluten",
     "allergenesModifiables": "Gluten",
     "optionRemplacement": "Gluten: Enlever les croûtons.",
-    "typesMenu": "BRUNCH,LUNCH,SOUPER,SNACK"
+    "typesMenu": ["BRUNCH", "LUNCH", "SOUPER", "SNACK"]
   },
   {
     "nom": "Choux de Bruxelles Façon César",
@@ -45,7 +45,7 @@
     "allergenes": "Soja, Produits laitiers, Gluten, Oeufs, Viande",
     "allergenesModifiables": "Gluten, Viande",
     "optionRemplacement": "Gluten: Enlever les croûtons. Viande: Enlever la pancetta.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Endives Braisées",
@@ -53,7 +53,7 @@
     "allergenes": "Produits laitiers, Viande",
     "allergenesModifiables": "Viande",
     "optionRemplacement": "Viande: Enlever la pancetta.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Burratina",
@@ -61,7 +61,7 @@
     "allergenes": "Produits laitiers, Viande, Gluten, Noix",
     "allergenesModifiables": "Viande, Gluten, Noix",
     "optionRemplacement": "Viande: Enlever le prosciutto. Gluten: Enlever pain. Noix: Enlever amandes.",
-    "typesMenu": "BRUNCH,LUNCH,SOUPER,SNACK"
+    "typesMenu": ["BRUNCH", "LUNCH", "SOUPER", "SNACK"]
   },
   {
     "nom": "Terrine Foie Gras",
@@ -69,7 +69,7 @@
     "allergenes": "Viande, Produits laitiers, Oeufs, Noix, Gluten",
     "allergenesModifiables": "Oeufs, Noix, Gluten",
     "optionRemplacement": "Noix: Enlever noisettes. Oeufs/Gluten: Enlever pain (NON RECOMMANDÉ).",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Brioche Escargot",
@@ -77,7 +77,7 @@
     "allergenes": "Mollusques, Produits laitiers, Oeufs, Gluten",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "BRUNCH,LUNCH,SOUPER,SNACK"
+    "typesMenu": ["BRUNCH", "LUNCH", "SOUPER", "SNACK"]
   },
   {
     "nom": "Étagé Céleri-Rave (Vegan)",
@@ -85,7 +85,7 @@
     "allergenes": "Noix",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Cavatellis",
@@ -93,7 +93,7 @@
     "allergenes": "Gluten, Oeufs, Produits laitiers",
     "allergenesModifiables": "Produits laitiers",
     "optionRemplacement": "Produits laitiers: Enlever les fromages.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Boudin Maison",
@@ -101,7 +101,7 @@
     "allergenes": "Viande, Produits laitiers",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Joue de Boeuf",
@@ -109,7 +109,7 @@
     "allergenes": "Viande, Produits laitiers",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Pappardelle al Ragù",
@@ -117,7 +117,7 @@
     "allergenes": "Gluten, Oeufs, Viande, Produits laitiers",
     "allergenesModifiables": "Produits laitiers",
     "optionRemplacement": "Produits laitiers: Enlever le Louis d'or.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Pieuvre",
@@ -125,7 +125,7 @@
     "allergenes": "Fruits de mer, Produits laitiers, Viande",
     "allergenesModifiables": "Viande",
     "optionRemplacement": "Viande: Enlever le chorizo.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Croque Nordique",
@@ -133,7 +133,7 @@
     "allergenes": "Oeufs, Produits laitiers, Gluten, Fruits de mer, Viande",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "LUNCH,SOUPER"
+    "typesMenu": ["LUNCH", "SOUPER"]
   },
   {
     "nom": "Pavlova Forêt Noir",
@@ -141,7 +141,7 @@
     "allergenes": "Produits laitiers, Oeufs",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "DESSERT"
+    "typesMenu": ["DESSERT"]
   },
   {
     "nom": "Entremet Poire-Caramel",
@@ -149,7 +149,7 @@
     "allergenes": "Gluten, Oeufs, Produits laitiers",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "DESSERT"
+    "typesMenu": ["DESSERT"]
   },
   {
     "nom": "Crème Catalana",
@@ -157,7 +157,7 @@
     "allergenes": "Oeufs, Produits laitiers",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "DESSERT"
+    "typesMenu": ["DESSERT"]
   },
   {
     "nom": "Pain Doré Croustade aux Pommes",
@@ -165,7 +165,7 @@
     "allergenes": "Oeufs, Produits laitiers, Gluten",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "BRUNCH"
+    "typesMenu": ["BRUNCH"]
   },
   {
     "nom": "Pain Doré Choco Banane",
@@ -173,7 +173,7 @@
     "allergenes": "Oeufs, Produits laitiers, Gluten",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "BRUNCH"
+    "typesMenu": ["BRUNCH"]
   },
   {
     "nom": "Pain Doré Sucré Salé",
@@ -181,7 +181,7 @@
     "allergenes": "Oeufs, Produits laitiers, Gluten, Viande",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "BRUNCH"
+    "typesMenu": ["BRUNCH"]
   },
   {
     "nom": "Oeuf Purgatoire",
@@ -189,7 +189,7 @@
     "allergenes": "Oeufs, Gluten, Produits laitiers",
     "allergenesModifiables": "Oeufs, Gluten",
     "optionRemplacement": "Gluten: Enlever pain naan. Oeufs: Retrait possible (non recommandé).",
-    "typesMenu": "BRUNCH"
+    "typesMenu": ["BRUNCH"]
   },
   {
     "nom": "Croissant Déjeuner",
@@ -197,7 +197,7 @@
     "allergenes": "Gluten, Produits laitiers, Oeufs, Viande",
     "allergenesModifiables": "Viande",
     "optionRemplacement": "Viande: Retirer le bacon.",
-    "typesMenu": "BRUNCH"
+    "typesMenu": ["BRUNCH"]
   },
   {
     "nom": "Bagel Gravlax",
@@ -205,6 +205,6 @@
     "allergenes": "Poisson, Gluten, Produits laitiers, Oeufs",
     "allergenesModifiables": "",
     "optionRemplacement": "Aucune option de remplacement.",
-    "typesMenu": "BRUNCH"
+    "typesMenu": ["BRUNCH"]
   }
 ]

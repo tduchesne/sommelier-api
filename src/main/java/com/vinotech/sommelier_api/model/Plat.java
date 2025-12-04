@@ -38,8 +38,11 @@ public class Plat {
     @Column(name = "option_remplacement", columnDefinition = "TEXT")
     private String optionRemplacement;
 
-    @Column(name = "types_menu", columnDefinition = "TEXT")
-    private String typesMenu;
+    @ElementCollection(targetClass = MenuType.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "plat_menu_types", joinColumns = @JoinColumn(name = "plat_id"))
+    @Enumerated(EnumType.STRING)
+    @Column(name = "menu_type")
+    private Set<MenuType> typesMenu = new HashSet<>();
 
     /**
      * -- GETTER --
