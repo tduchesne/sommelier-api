@@ -38,6 +38,9 @@ public class Plat {
     @Column(name = "option_remplacement", columnDefinition = "TEXT")
     private String optionRemplacement;
 
+    @Column(name = "types_menu", columnDefinition = "TEXT")
+    private String typesMenu;
+
     /**
      * -- GETTER --
      *  Gets the wines associated with this plat.

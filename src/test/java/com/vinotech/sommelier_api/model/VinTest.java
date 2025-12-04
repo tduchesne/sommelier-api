@@ -194,7 +194,7 @@ class VinTest {
     void shouldHandlePlatWithNullVinsAccordes() {
         // Given
         // Use the all-args constructor and pass null for vinsAccordes so the Plat truly has a null collection
-        Plat platWithNullVins = new Plat(3L, "Special Plat", null, null, null, null, null);
+        Plat platWithNullVins = new Plat(3L, "Special Plat", null, null, null, null, null, null);
 
         // When
         vin.addPlat(platWithNullVins);

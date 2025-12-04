@@ -81,7 +81,8 @@ class PlatTest {
                 "Ingredients",
                 "Allergènes",
                 "Gluten",           // allergenesModifiables
-                "Enlever le pain",  // optionRemplacement
+                "Enlever le pain",
+                "LUNCH",// optionRemplacement
                 vins                // vinsAccordes
         );
 
@@ -237,7 +238,8 @@ class PlatTest {
                 "Allergènes",
                 null, // modifiable
                 null, // option
-                null  // vins
+                "LUNCH",
+                null // vins
         );
 
         assertThat(newPlat.getId()).isEqualTo(10L);
