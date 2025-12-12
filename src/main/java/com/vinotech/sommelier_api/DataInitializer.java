@@ -3,8 +3,10 @@ package com.vinotech.sommelier_api;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vinotech.sommelier_api.model.Plat;
+import com.vinotech.sommelier_api.model.Restaurant; // <--- Import ajouté
 import com.vinotech.sommelier_api.model.Vin;
 import com.vinotech.sommelier_api.repository.PlatRepository;
+import com.vinotech.sommelier_api.repository.RestaurantRepository; // <--- Import ajouté
 import com.vinotech.sommelier_api.repository.VinRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -19,8 +21,21 @@ import java.util.List;
 public class DataInitializer {
 
     @Bean
-    CommandLineRunner initDatabase(VinRepository vinRepository, PlatRepository platRepository) {
+    CommandLineRunner initDatabase(VinRepository vinRepository,
+                                   PlatRepository platRepository,
+                                   RestaurantRepository restaurantRepository) {
         return args -> {
+            // 1. Initialisation du Restaurant (Si vide)
+            if (restaurantRepository.count() == 0) {
+                System.out.println("🏢 Initialisation du restaurant par défaut...");
+                Restaurant qss = new Restaurant("Que Sera Syrah", "QSS_DIX30");
+                // Utilisation de la vraie adresse
+                qss.setAdresse("20-1725, ave. des Lumières, Brossard, QC");
+                restaurantRepository.save(qss);
+                System.out.println("✅ Restaurant 'Que Sera Syrah' créé !");
+            }
+
+            // 2. Chargement des données existantes (Vins et Plats)
             loadDataIfEmpty(vinRepository, "vins.json", new TypeReference<List<Vin>>(){}, "vins");
             loadDataIfEmpty(platRepository, "plats.json", new TypeReference<List<Plat>>(){}, "plats");
         };

@@ -37,3 +37,6 @@ build/
 /src/main/resources/application-local.properties
 # Ignore main application.properties to prevent committed credentials
 /src/main/resources/application.properties
+
+# Docker Environment variables
+.env
