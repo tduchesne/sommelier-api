@@ -10,6 +10,7 @@ import lombok.Setter;
 import lombok.AccessLevel;
 import java.util.HashSet;
 import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Getter
 @Setter
@@ -43,6 +44,11 @@ public class Plat {
     @Enumerated(EnumType.STRING)
     @Column(name = "menu_type")
     private Set<MenuType> typesMenu = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id", nullable = false)
+    @JsonIgnore
+    private Restaurant restaurant;
 
     /**
      * -- GETTER --

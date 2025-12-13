@@ -17,23 +17,33 @@ class PlatTest {
     private Plat plat;
     private Vin vin1;
     private Vin vin2;
+    private Restaurant restaurant;
 
     @BeforeEach
     void setUp() {
+        // Setup Restaurant
+        restaurant = new Restaurant();
+        restaurant.setId(99L);
+        restaurant.setNom("Test Resto");
+        restaurant.setCodeUnique("TEST01");
+
+        // Setup Plat
         plat = new Plat();
         plat.setId(1L);
         plat.setNom("Entrecôte Grillée");
         plat.setIngredients("Bœuf, sel, poivre, huile d'olive");
         plat.setAllergenes("Aucun");
-        // Initialisation des nouveaux champs pour éviter les effets de bord
         plat.setAllergenesModifiables(null);
         plat.setOptionRemplacement(null);
+        plat.setRestaurant(restaurant);
 
+        // Setup Vins
         vin1 = Vin.builder()
                 .id(1L)
                 .nom("Bordeaux Rouge")
                 .region("Bordeaux")
                 .couleur(CouleurVin.ROUGE)
+                .restaurant(restaurant)
                 .build();
 
         vin2 = Vin.builder()
@@ -41,6 +51,7 @@ class PlatTest {
                 .nom("Bourgogne Rouge")
                 .region("Bourgogne")
                 .couleur(CouleurVin.ROUGE)
+                .restaurant(restaurant)
                 .build();
     }
 
@@ -58,8 +69,9 @@ class PlatTest {
         assertThat(newPlat.getNom()).isNull();
         assertThat(newPlat.getIngredients()).isNull();
         assertThat(newPlat.getAllergenes()).isNull();
-        assertThat(newPlat.getAllergenesModifiables()).isNull(); // Nouveau check
-        assertThat(newPlat.getOptionRemplacement()).isNull();     // Nouveau check
+        assertThat(newPlat.getAllergenesModifiables()).isNull();
+        assertThat(newPlat.getOptionRemplacement()).isNull();
+        assertThat(newPlat.getRestaurant()).isNull();
         assertThat(newPlat.getVinsAccordes()).isNotNull();
         assertThat(newPlat.getVinsAccordes()).isEmpty();
     }
@@ -73,20 +85,17 @@ class PlatTest {
 
         Set<MenuType> menuTypes = new HashSet<>(Arrays.asList(MenuType.LUNCH, MenuType.SOUPER));
 
-        // When - Mise à jour de la signature du constructeur (Ajout des 2 nouveaux champs au milieu ou à la fin selon Lombok)
-        // L'ordre Lombok suit généralement l'ordre de déclaration des champs dans la classe.
-        // Ordre supposé: id, nom, ingredients, allergenes, allergenesModifiables, optionRemplacement, (vinsAccordes si présent)
-
-        // Note : Si vinsAccordes n'est pas dans le constructeur (dépend de @ToString/@EqualsAndHashCode exclude), adapter ici.
-        // On suppose ici que Lombok inclut tout.
+        // When
+        // Ordre basé sur ta structure : Id, Nom, Ingredients, Allergenes, Modifiables, Option, TypesMenu, Restaurant, Vins
         Plat newPlat = new Plat(
                 1L,
                 "Test Plat",
                 "Ingredients",
                 "Allergènes",
                 "Gluten",           // allergenesModifiables
-                "Enlever le pain",
-                menuTypes,// optionRemplacement
+                "Enlever le pain",  // optionRemplacement
+                menuTypes,          // typesMenu
+                restaurant,         // restaurant
                 vins                // vinsAccordes
         );
 
@@ -98,6 +107,7 @@ class PlatTest {
         assertThat(newPlat.getAllergenes()).isEqualTo("Allergènes");
         assertThat(newPlat.getAllergenesModifiables()).isEqualTo("Gluten");
         assertThat(newPlat.getOptionRemplacement()).isEqualTo("Enlever le pain");
+        assertThat(newPlat.getRestaurant()).isEqualTo(restaurant);
         assertThat(newPlat.getVinsAccordes()).hasSize(1);
         assertThat(newPlat.getVinsAccordes()).contains(vin1);
     }
@@ -115,6 +125,15 @@ class PlatTest {
     }
 
     // ==================== Getters and Setters Tests ====================
+
+    @Test
+    @DisplayName("Should get and set restaurant correctly")
+    void shouldGetAndSetRestaurantCorrectly() {
+        Plat newPlat = new Plat();
+        newPlat.setRestaurant(restaurant);
+        assertThat(newPlat.getRestaurant()).isEqualTo(restaurant);
+        assertThat(newPlat.getRestaurant().getNom()).isEqualTo("Test Resto");
+    }
 
     @Test
     @DisplayName("Should get and set id correctly")
@@ -148,37 +167,23 @@ class PlatTest {
         assertThat(newPlat.getAllergenes()).isEqualTo("Gluten");
     }
 
-    // --- NOUVEAUX TESTS POUR SPRINT 7 ---
-
     @Test
     @DisplayName("Should get and set allergenesModifiables correctly")
     void shouldGetAndSetAllergenesModifiablesCorrectly() {
-        // Given
         Plat newPlat = new Plat();
         String modifiable = "Gluten, Lait";
-
-        // When
         newPlat.setAllergenesModifiables(modifiable);
-
-        // Then
         assertThat(newPlat.getAllergenesModifiables()).isEqualTo(modifiable);
     }
 
     @Test
     @DisplayName("Should get and set optionRemplacement correctly")
     void shouldGetAndSetOptionRemplacementCorrectly() {
-        // Given
         Plat newPlat = new Plat();
         String option = "Retirer les croûtons";
-
-        // When
         newPlat.setOptionRemplacement(option);
-
-        // Then
         assertThat(newPlat.getOptionRemplacement()).isEqualTo(option);
     }
-
-    // ------------------------------------
 
     @Test
     @DisplayName("Should allow setting null values")
@@ -186,18 +191,27 @@ class PlatTest {
         plat.setNom(null);
         plat.setIngredients(null);
         plat.setAllergenes(null);
-        plat.setAllergenesModifiables(null); // Updated
-        plat.setOptionRemplacement(null);   // Updated
+        plat.setAllergenesModifiables(null);
+        plat.setOptionRemplacement(null);
+        plat.setRestaurant(null);
 
         assertThat(plat.getNom()).isNull();
         assertThat(plat.getIngredients()).isNull();
         assertThat(plat.getAllergenes()).isNull();
         assertThat(plat.getAllergenesModifiables()).isNull();
         assertThat(plat.getOptionRemplacement()).isNull();
+        assertThat(plat.getRestaurant()).isNull();
+    }
+
+    @Test
+    @DisplayName("Should get and set typesMenu correctly")
+    void shouldGetAndSetTypesMenuCorrectly() {
+        Plat newPlat = new Plat();
+        newPlat.setTypesMenu(Collections.singleton(MenuType.BRUNCH));
+        assertThat(newPlat.getTypesMenu()).contains(MenuType.BRUNCH);
     }
 
     // ==================== getVinsAccordes() Method Tests ====================
-    // (Ces tests restent inchangés car ils ne dépendent pas du constructeur)
 
     @Test
     @DisplayName("Should get empty vinsAccordes initially")
@@ -210,8 +224,11 @@ class PlatTest {
     @Test
     @DisplayName("Should get vinsAccordes with multiple vins")
     void shouldGetVinsAccordesWithMultipleVins() {
-        vin1.addPlat(plat);
-        vin2.addPlat(plat);
+        // Setup bidirectional link manually or rely on addPlat logic inside Vin/Plat if available
+        // Assuming we manipulate sets directly here as it's a model test
+        plat.getVinsAccordes().add(vin1);
+        plat.getVinsAccordes().add(vin2);
+
         Set<Vin> vins = plat.getVinsAccordes();
         assertThat(vins).hasSize(2);
         assertThat(vins).containsExactlyInAnyOrder(vin1, vin2);
@@ -234,31 +251,24 @@ class PlatTest {
     @Test
     @DisplayName("Should create plat with all args constructor and null vins")
     void shouldCreatePlatWithAllArgsConstructorAndNullVins() {
-
         Set<MenuType> menuTypes = new HashSet<>(Arrays.asList(MenuType.LUNCH, MenuType.SOUPER));
-        // Updated Constructor call
+
         Plat newPlat = new Plat(
                 10L,
                 "Test",
                 "Ingredients",
                 "Allergènes",
-                null, // modifiable
-                null, // option
+                null,
+                null,
                 menuTypes,
-                null // vins
+                restaurant, // Restaurant required
+                null // vins null
         );
 
         assertThat(newPlat.getId()).isEqualTo(10L);
         assertThat(newPlat.getNom()).isEqualTo("Test");
         assertThat(newPlat.getAllergenesModifiables()).isNull();
+        assertThat(newPlat.getRestaurant()).isNotNull();
         assertThat(newPlat.getVinsAccordes()).isNull();
-    }
-
-    @Test
-    @DisplayName("Should get and set typesMenu correctly")
-    void shouldGetAndSetTypesMenuCorrectly() {
-        Plat newPlat = new Plat();
-        newPlat.setTypesMenu(Collections.singleton(MenuType.BRUNCH));
-        assertThat(newPlat.getTypesMenu()).contains(MenuType.BRUNCH);
     }
 }
