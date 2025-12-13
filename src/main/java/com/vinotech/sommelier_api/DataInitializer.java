@@ -32,19 +32,18 @@ public class DataInitializer {
                     "restaurants.json",
                     new TypeReference<List<Restaurant>>(){},
                     "restaurants",
-                    null
+                    null // Pas de post-traitement nécessaire pour le resto lui-même
             );
 
-            // 2. Récupérer le restaurant "Par défaut" pour y lier les données
-            // (On prend le premier de la liste pour l'instant)
-            List<Restaurant> restos = restaurantRepository.findAll();
-            if (restos.isEmpty()) {
-                throw new RuntimeException("❌ ERREUR CRITIQUE : Aucun restaurant n'a été chargé depuis restaurants.json ! Impossible d'importer les vins.");
-            }
-            final Restaurant defaultResto = restos.get(0);
-            System.out.println("🔗 Liaison des données au contexte : " + defaultResto.getNom());
+            // 2. Récupérer le restaurant "Par défaut" via son code unique
+            final String DEFAULT_RESTO_CODE = "QSS_DIX30";
 
-            // 3. Charger les Vins (Liaison avec le Resto)
+            final Restaurant defaultResto = restaurantRepository.findByCodeUnique(DEFAULT_RESTO_CODE)
+                    .orElseThrow(() -> new RuntimeException("❌ ERREUR CRITIQUE : Le restaurant par défaut '" + DEFAULT_RESTO_CODE + "' n'a pas été trouvé après l'import JSON !"));
+
+            System.out.println("🔗 Liaison des données au contexte : " + defaultResto.getNom() + " (" + defaultResto.getCodeUnique() + ")");
+
+            // 3. Charger les Vins (Liaison avec le Resto récupéré)
             loadDataIfEmpty(
                     vinRepository,
                     "vins.json",
@@ -53,7 +52,7 @@ public class DataInitializer {
                     (vin) -> vin.setRestaurant(defaultResto)
             );
 
-            // 4. Charger les Plats (Liaison avec le Resto)
+            // 4. Charger les Plats (Liaison avec le Resto récupéré)
             loadDataIfEmpty(
                     platRepository,
                     "plats.json",
@@ -80,7 +79,7 @@ public class DataInitializer {
                 InputStream inputStream = new ClassPathResource(filename).getInputStream();
                 List<T> items = mapper.readValue(inputStream, typeReference);
 
-                // Application de la logique de liaison (ex: setRestaurant)
+                // Application de la logique de liaison
                 if (postProcessor != null) {
                     for (T item : items) {
                         postProcessor.accept(item);
