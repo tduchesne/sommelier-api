@@ -1,12 +1,10 @@
 package com.vinotech.sommelier_api.model;
-
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Getter
 @Setter
@@ -38,6 +36,11 @@ public class Vin {
 
     @Column(length = 100)
     private String cepage;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id", nullable = false)
+    @JsonIgnore // Important : pour ne pas renvoyer tout le resto quand on demande un vin
+    private Restaurant restaurant;
 
     /**
      * Associates the given Plat with this Vin and updates the bidirectional relationship.
