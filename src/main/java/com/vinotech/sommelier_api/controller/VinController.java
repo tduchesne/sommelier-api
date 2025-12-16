@@ -33,14 +33,6 @@ public class VinController {
     }
 
     /**
-     * Récupère la liste de tous les Vins. Mappé sur GET /api/vins
-     */
-    @GetMapping
-    public List<Vin> getAllVins() {
-        return vinService.findAll();
-    }
-
-    /**
      * Récupère un Vin par son ID. Mappé sur GET /api/vins/{id}
      */
     @GetMapping("/{id}")
@@ -52,18 +44,23 @@ public class VinController {
 
     /**
      * Recherche filtrée.
-     * URL: GET /api/vins/search?couleur=ROUGE&minPrix=50&maxPrix=100&region=loire
+     * URL: GET /api/vins?couleur=ROUGE&minPrix=50&maxPrix=100&region=loire&search=...
      * Tous les paramètres sont optionnels.
      */
-    @GetMapping("/search")
-    public Page<Vin> searchVins(
+    @GetMapping
+    public List<Vin> searchVins(
+            @RequestParam(required = false) BigDecimal minPrix,
+            @RequestParam(required = false) BigDecimal maxPrix,
             @RequestParam(required = false) CouleurVin couleur,
-            @RequestParam(required = false) Double minPrix,
-            @RequestParam(required = false) Double maxPrix,
             @RequestParam(required = false) String region,
-            Pageable pageable
+            @RequestParam(required = false) String search
     ) {
-        return vinService.searchVins(couleur, minPrix, maxPrix, region, pageable);
+        // TODO: [Issue #5] Récupérer l'ID depuis le JWT.
+        // Temporaire : On force le Restaurant ID = 1
+        Long restaurantId = 1L;
+
+        // Appel au service avec les bons types et le bon ordre
+        return vinService.searchVins(restaurantId, minPrix, maxPrix, couleur, region, search);
     }
 
 }
