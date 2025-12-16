@@ -4,9 +4,7 @@ import com.vinotech.sommelier_api.model.Vin;
 import com.vinotech.sommelier_api.repository.VinRepository;
 import org.springframework.stereotype.Service;
 import com.vinotech.sommelier_api.repository.specs.VinSpecification;
-
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,10 +19,6 @@ public class VinService {
 
     public Vin save(Vin vin) {
         return vinRepository.save(vin);
-    }
-
-    public List<Vin> findAll() {
-        return vinRepository.findAll();
     }
 
     public Optional<Vin> findById(Long id) {

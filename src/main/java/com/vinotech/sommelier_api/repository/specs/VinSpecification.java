@@ -14,6 +14,8 @@ import java.util.List;
 
 public class VinSpecification implements Specification<Vin> {
 
+    private static final long serialVersionUID = 1L;
+
     private final Long restaurantId;
     private final BigDecimal minPrix;
     private final BigDecimal maxPrix;
@@ -42,7 +44,7 @@ public class VinSpecification implements Specification<Vin> {
             predicates.add(criteriaBuilder.disjunction());
         }
 
-        // 2. LOGIQUE DE FILTRAGE
+        // 2. FILTRES
         if (minPrix != null) {
             predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("prix"), minPrix));
         }
@@ -52,15 +54,15 @@ public class VinSpecification implements Specification<Vin> {
         if (couleur != null) {
             predicates.add(criteriaBuilder.equal(root.get("couleur"), couleur));
         }
-        if (region != null && !region.isEmpty()) {
-            predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("region")), "%" + region.toLowerCase() + "%"));
+        if (region != null && !region.trim().isEmpty()) {
+            predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("region")), "%" + region.trim().toLowerCase() + "%"));
         }
-        if (search != null && !search.isEmpty()) {
-            String searchPattern = "%" + search.toLowerCase() + "%";
-            Predicate nom = criteriaBuilder.like(criteriaBuilder.lower(root.get("nom")), searchPattern);
-            Predicate cepage = criteriaBuilder.like(criteriaBuilder.lower(root.get("cepage")), searchPattern);
-            Predicate notes = criteriaBuilder.like(criteriaBuilder.lower(root.get("notesDegustation")), searchPattern);
-            predicates.add(criteriaBuilder.or(nom, cepage, notes));
+        if (search != null && !search.trim().isEmpty()) {
+            String searchPattern = "%" + search.trim().toLowerCase() + "%";
+            Predicate nomPredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("nom")), searchPattern);
+            Predicate cepagePredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("cepage")), searchPattern);
+            Predicate notesPredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("notesDegustation")), searchPattern);
+            predicates.add(criteriaBuilder.or(nomPredicate, cepagePredicate, notesPredicate));
         }
 
         return criteriaBuilder.and(predicates.toArray(new Predicate[0]));

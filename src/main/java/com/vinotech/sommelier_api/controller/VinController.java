@@ -44,7 +44,7 @@ public class VinController {
 
     /**
      * Recherche filtrée.
-     * URL: GET /api/vins/search?couleur=ROUGE&minPrix=50&maxPrix=100&region=loire
+     * URL: GET /api/vins?couleur=ROUGE&minPrix=50&maxPrix=100&region=loire&search=...
      * Tous les paramètres sont optionnels.
      */
     @GetMapping
