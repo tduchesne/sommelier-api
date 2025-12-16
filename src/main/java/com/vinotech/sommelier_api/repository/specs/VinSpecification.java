@@ -32,15 +32,26 @@ public class VinSpecification implements Specification<Vin> {
         this.search = search;
     }
 
+    /**
+     * Nettoie et échappe les caractères spéciaux pour les requêtes LIKE SQL.
+     * Empêche l'injection de jokers (%) par l'utilisateur.
+     */
+    private String escapeLikePattern(String input) {
+        if (input == null) return "";
+        return input.trim().toLowerCase()
+                .replace("\\", "\\\\") // Échapper l'antislash d'abord
+                .replace("%", "\\%")   // Échapper le pourcent
+                .replace("_", "\\_");  // Échapper l'underscore
+    }
+
     @Override
     public Predicate toPredicate(Root<Vin> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
         List<Predicate> predicates = new ArrayList<>();
 
-        // 1. ISOLATION MULTI-TENANT
+        // 1. ISOLATION
         if (restaurantId != null) {
             predicates.add(criteriaBuilder.equal(root.get("restaurant").get("id"), restaurantId));
         } else {
-            // Sécurité : Si on oublie l'ID, on ne renvoie rien.
             predicates.add(criteriaBuilder.disjunction());
         }
 
@@ -48,23 +59,34 @@ public class VinSpecification implements Specification<Vin> {
         if (minPrix != null) {
             predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("prix"), minPrix));
         }
+
         if (maxPrix != null) {
             predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get("prix"), maxPrix));
         }
+
         if (couleur != null) {
             predicates.add(criteriaBuilder.equal(root.get("couleur"), couleur));
         }
+
+        // Utilisation de l'échappement ('\') pour sécuriser le LIKE
         if (region != null && !region.trim().isEmpty()) {
-            predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("region")), "%" + region.trim().toLowerCase() + "%"));
+            predicates.add(criteriaBuilder.like(
+                    criteriaBuilder.lower(root.get("region")),
+                    "%" + escapeLikePattern(region) + "%",
+                    '\\' // Caractère d'échappement
+            ));
         }
+
         if (search != null && !search.trim().isEmpty()) {
-            String searchPattern = "%" + search.trim().toLowerCase() + "%";
-            Predicate nomPredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("nom")), searchPattern);
-            Predicate cepagePredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("cepage")), searchPattern);
-            Predicate notesPredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("notesDegustation")), searchPattern);
+            String searchPattern = "%" + escapeLikePattern(search) + "%";
+
+            Predicate nomPredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("nom")), searchPattern, '\\');
+            Predicate cepagePredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("cepage")), searchPattern, '\\');
+            Predicate notesPredicate = criteriaBuilder.like(criteriaBuilder.lower(root.get("notesDegustation")), searchPattern, '\\');
+
             predicates.add(criteriaBuilder.or(nomPredicate, cepagePredicate, notesPredicate));
         }
 
         return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
     }
-}
+}   
