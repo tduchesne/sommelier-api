@@ -25,9 +25,13 @@ public class Restaurant {
 
     private String adresse;
 
-    // Code unique pour identifier le resto (utile plus tard pour les URLs ou API Keys)
+    // (Identifiant Métier / Humain)
     @Column(unique = true, nullable = false)
     private String codeUnique;
+
+    // (Identifiant Technique / Auth)
+    @Column(name = "clerk_id", unique = true)
+    private String clerkId;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
