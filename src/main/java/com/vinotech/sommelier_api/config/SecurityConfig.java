@@ -17,20 +17,24 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                // 1. Désactiver CSRF (inutile pour une API REST Stateless utilisée par mobile)
+                // 1. Deactivate CSRF and set session management to stateless
                 .csrf(AbstractHttpConfigurer::disable)
 
-                // 2. Gestion des droits d'accès
+                // Session management: stateless pour OAuth2 Resource Server
+                .sessionManagement(session -> session
+                .sessionCreationPolicy(org.springframework.security.config.http.SessionCreationPolicy.STATELESS))
+
+                // 2. Configure authorization rules
                 .authorizeHttpRequests(auth -> auth
-                        // Les endpoints publics (Swagger, Health check)
+                        // Authorize public endpoints
                         .requestMatchers("/actuator/health", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        // TOUT ce qui commence par /api/ demande un Token valide
+                        // Secure API endpoints
                         .requestMatchers("/api/**").authenticated()
-                        // Le reste est bloqué par précaution
+                        // Deny all other requests
                         .anyRequest().denyAll()
                 )
 
-                // 3. Activer le serveur de ressource OAuth2 (Validation JWT via Clerk)
+                // 3. Configure OAuth2 Resource Server with JWT
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
 
         return http.build();
