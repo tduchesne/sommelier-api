@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vinotech.sommelier_api.model.CouleurVin;
 import com.vinotech.sommelier_api.model.Restaurant;
 import com.vinotech.sommelier_api.model.Vin;
+import com.vinotech.sommelier_api.service.RestaurantSecurityService;
 import com.vinotech.sommelier_api.service.VinService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -12,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
@@ -20,16 +23,20 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.jwt;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(VinController.class)
 @DisplayName("VinController Unit Tests")
+@ActiveProfiles("test")
+@TestPropertySource(properties = "CLERK_ISSUER_URI=https://clerk.mock.test")
 class VinControllerTest {
 
     @Autowired
@@ -41,6 +48,10 @@ class VinControllerTest {
     @MockBean
     private VinService vinService;
 
+    // 1. AJOUT DU MOCK POUR LE SERVICE DE SÉCURITÉ
+    @MockBean
+    private RestaurantSecurityService securityService;
+
     private Vin testVin1;
     private Vin testVin2;
     private Vin testVin3;
@@ -48,10 +59,14 @@ class VinControllerTest {
 
     @BeforeEach
     void setUp() {
-        // On doit mocker le restaurant car Vin en a besoin
+        // Mock du Restaurant
         restaurant = new Restaurant();
         restaurant.setId(1L);
         restaurant.setNom("Que Sera Syrah");
+
+        // 2. CONFIGURATION DU COMPORTEMENT DE SÉCURITÉ PAR DÉFAUT
+        // Quand le contrôleur demandera l'ID au service, on renverra toujours 1L
+        when(securityService.getRestaurantIdFromToken(any())).thenReturn(1L);
 
         testVin1 = Vin.builder()
                 .id(1L)
@@ -115,6 +130,8 @@ class VinControllerTest {
         when(vinService.save(any(Vin.class))).thenReturn(savedVin);
 
         mockMvc.perform(post("/api/vins")
+                        .with(jwt()) // <--- SIMULE UN TOKEN JWT VALIDE
+                        .with(csrf()) // <--- NÉCESSAIRE POUR POST DANS LES TESTS
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(newVin)))
                 .andExpect(status().isCreated())
@@ -124,7 +141,7 @@ class VinControllerTest {
         verify(vinService, times(1)).save(any(Vin.class));
     }
 
-    // ==================== GET /api/vins - Search Tests (Remplace findAll) ====================
+    // ==================== GET /api/vins - Search Tests ====================
 
     @Test
     @DisplayName("Should retrieve all vins (search without filters) when multiple exist")
@@ -132,28 +149,27 @@ class VinControllerTest {
         // Given
         List<Vin> vins = Arrays.asList(testVin1, testVin2, testVin3);
 
-        // IMPORTANT : On mock searchVins avec ID=1L (hardcodé dans le controller) et null pour les filtres
+        // On attend un appel avec l'ID 1L (venant du mock securityService)
         when(vinService.searchVins(eq(1L), any(), any(), any(), any(), any())).thenReturn(vins);
 
         // When & Then
         mockMvc.perform(get("/api/vins")
+                        .with(jwt()) // <--- SIMULE UN TOKEN JWT
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0].nom").value("Château Margaux"));
 
-        // Vérifie qu'on appelle bien searchVins avec le bon ID de restaurant
         verify(vinService, times(1)).searchVins(eq(1L), any(), any(), any(), any(), any());
     }
 
     @Test
     @DisplayName("Should return empty list when no vins exist")
     void shouldReturnEmptyListWhenNoVinsExist() throws Exception {
-        // Given
         when(vinService.searchVins(eq(1L), any(), any(), any(), any(), any())).thenReturn(Collections.emptyList());
 
-        // When & Then
         mockMvc.perform(get("/api/vins")
+                        .with(jwt()) // <--- SIMULE UN TOKEN JWT
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", empty()));
@@ -164,11 +180,10 @@ class VinControllerTest {
     @Test
     @DisplayName("Should retrieve single vin in list")
     void shouldRetrieveSingleVinInList() throws Exception {
-        // Given
         when(vinService.searchVins(eq(1L), any(), any(), any(), any(), any())).thenReturn(Collections.singletonList(testVin1));
 
-        // When & Then
         mockMvc.perform(get("/api/vins")
+                        .with(jwt()) // <--- SIMULE UN TOKEN JWT
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)));
@@ -179,7 +194,6 @@ class VinControllerTest {
     @Test
     @DisplayName("Should handle large list of vins")
     void shouldHandleLargeListOfVins() throws Exception {
-        // Given
         List<Vin> largeList = new java.util.ArrayList<>();
         for (int i = 1; i <= 100; i++) {
             largeList.add(Vin.builder()
@@ -190,8 +204,8 @@ class VinControllerTest {
         }
         when(vinService.searchVins(eq(1L), any(), any(), any(), any(), any())).thenReturn(largeList);
 
-        // When & Then
         mockMvc.perform(get("/api/vins")
+                        .with(jwt()) // <--- SIMULE UN TOKEN JWT
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(100)));
@@ -205,6 +219,7 @@ class VinControllerTest {
         when(vinService.findById(1L)).thenReturn(Optional.of(testVin1));
 
         mockMvc.perform(get("/api/vins/1")
+                        .with(jwt()) // <--- SIMULE UN TOKEN JWT
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.nom").value("Château Margaux"));
@@ -218,6 +233,7 @@ class VinControllerTest {
         when(vinService.findById(999L)).thenReturn(Optional.empty());
 
         mockMvc.perform(get("/api/vins/999")
+                        .with(jwt()) // <--- SIMULE UN TOKEN JWT
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
@@ -225,13 +241,12 @@ class VinControllerTest {
     // ==================== Edge Cases and Error Handling ====================
 
     @Test
-    @DisplayName("Should handle service exception during search (previously findAll)")
+    @DisplayName("Should handle service exception during search")
     void shouldHandleServiceExceptionDuringSearch() throws Exception {
-        // Given
         when(vinService.searchVins(eq(1L), any(), any(), any(), any(), any())).thenThrow(new RuntimeException("Database error"));
 
-        // When & Then
-        mockMvc.perform(get("/api/vins"))
+        mockMvc.perform(get("/api/vins")
+                        .with(jwt())) // <--- SIMULE UN TOKEN JWT
                 .andExpect(status().is5xxServerError());
     }
 
@@ -239,8 +254,19 @@ class VinControllerTest {
     @DisplayName("Should handle wrong HTTP method")
     void shouldHandleWrongHttpMethod() throws Exception {
         mockMvc.perform(put("/api/vins")
+                        .with(jwt()) // <--- SIMULE UN TOKEN JWT
+                        .with(csrf()) // <--- CSRF pour les méthodes non-GET
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{}"))
                 .andExpect(status().isMethodNotAllowed());
+    }
+
+    @Test
+    @DisplayName("Should return 401 Unauthorized when no token provided")
+    void shouldReturn401WhenNoTokenProvided() throws Exception {
+        // Pas de .with(jwt()) ici
+        mockMvc.perform(get("/api/vins")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isUnauthorized());
     }
 }

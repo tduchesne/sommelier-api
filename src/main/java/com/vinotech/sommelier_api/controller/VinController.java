@@ -2,11 +2,12 @@ package com.vinotech.sommelier_api.controller;
 
 import com.vinotech.sommelier_api.model.CouleurVin;
 import com.vinotech.sommelier_api.model.Vin;
+import com.vinotech.sommelier_api.service.RestaurantSecurityService;
 import com.vinotech.sommelier_api.service.VinService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.util.List;
@@ -16,10 +17,12 @@ import java.util.List;
 public class VinController {
 
     private final VinService vinService;
+    private final RestaurantSecurityService securityService;
 
     // Injection du Service
-    public VinController(VinService vinService) {
+    public VinController(VinService vinService, RestaurantSecurityService securityService) {
         this.vinService = vinService;
+        this.securityService = securityService;
     }
 
     /**
@@ -49,15 +52,15 @@ public class VinController {
      */
     @GetMapping
     public List<Vin> searchVins(
+            @AuthenticationPrincipal Jwt jwt,
             @RequestParam(required = false) BigDecimal minPrix,
             @RequestParam(required = false) BigDecimal maxPrix,
             @RequestParam(required = false) CouleurVin couleur,
             @RequestParam(required = false) String region,
             @RequestParam(required = false) String search
     ) {
-        // TODO: [Issue #5] Récupérer l'ID depuis le JWT.
-        // Temporaire : On force le Restaurant ID = 1
-        Long restaurantId = 1L;
+        // Récupération dynamique de l'ID via le service
+        Long restaurantId = securityService.getRestaurantIdFromToken(jwt);
 
         // Appel au service avec les bons types et le bon ordre
         return vinService.searchVins(restaurantId, minPrix, maxPrix, couleur, region, search);
