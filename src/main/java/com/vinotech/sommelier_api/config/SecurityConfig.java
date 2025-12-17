@@ -7,6 +7,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.ApplicationRunner;
 
 @Configuration
 @EnableWebSecurity
@@ -32,5 +34,22 @@ public class SecurityConfig {
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()));
 
         return http.build();
+    }
+    /**
+     * Fail fast at startup if Clerk configuration is missing.
+     * Prevents deploying with the default placeholder URL.
+     */
+    @Bean
+    ApplicationRunner validateClerkConfig(@Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}") String issuerUri)
+    {
+        return args -> {
+            if (issuerUri.contains("placeholder.clerk.dev")) {
+                throw new IllegalStateException(
+                        "\n\n🚨 FATAL ERROR: CLERK_ISSUER_URI is not configured! 🚨\n" +
+                                "The application is running with the unsafe default placeholder: " + issuerUri + "\n" +
+                                "Please set the CLERK_ISSUER_URI environment variable in your run configuration or Render dashboard.\n"
+                );
+            }
+        };
     }
 }
