@@ -20,8 +20,8 @@ public class SecurityConfig {
 
                 // 2. Gestion des droits d'accès
                 .authorizeHttpRequests(auth -> auth
-                        // Les endpoints publics (Swagger, Health check si tu en as)
-                        .requestMatchers("/actuator/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        // Les endpoints publics (Swagger, Health check)
+                        .requestMatchers("/actuator/health", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         // TOUT ce qui commence par /api/ demande un Token valide
                         .requestMatchers("/api/**").authenticated()
                         // Le reste est bloqué par précaution

@@ -30,7 +30,7 @@ public class Restaurant {
     private String codeUnique;
 
     // (Identifiant Technique / Auth)
-    @Column(name = "clerk_id", unique = true)
+    @Column(name = "clerk_id", unique = true, nullable = false)
     private String clerkId;
 
     @Column(name = "created_at")
