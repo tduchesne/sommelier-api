@@ -43,7 +43,7 @@ public class SecurityConfig {
     ApplicationRunner validateClerkConfig(@Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}") String issuerUri)
     {
         return args -> {
-            if (issuerUri.contains("placeholder.clerk.dev")) {
+            if (issuerUri == null || issuerUri.isEmpty() || issuerUri.equals("https://placeholder.clerk.dev")) {
                 throw new IllegalStateException(
                         "\n\n🚨 FATAL ERROR: CLERK_ISSUER_URI is not configured! 🚨\n" +
                                 "The application is running with the unsafe default placeholder: " + issuerUri + "\n" +
