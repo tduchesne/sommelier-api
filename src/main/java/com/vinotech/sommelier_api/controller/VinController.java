@@ -50,7 +50,7 @@ public class VinController {
      * URL: GET /api/vins?couleur=ROUGE&minPrix=50&maxPrix=100&region=loire&search=...
      * Tous les paramètres sont optionnels.
      */
-    @GetMapping
+    @GetMapping({"", "/search"})
     public List<Vin> searchVins(
             // @AuthenticationPrincipal Jwt jwt, // <--- DÉSACTIVÉ
             @RequestParam(required = false) BigDecimal minPrix,
