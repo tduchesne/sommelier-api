@@ -52,18 +52,18 @@ public class VinController {
      */
     @GetMapping({"", "/search"})
     public List<Vin> searchVins(
-            // @AuthenticationPrincipal Jwt jwt, // <--- DÉSACTIVÉ
+            @AuthenticationPrincipal Jwt jwt,
             @RequestParam(required = false) BigDecimal minPrix,
             @RequestParam(required = false) BigDecimal maxPrix,
             @RequestParam(required = false) CouleurVin couleur,
             @RequestParam(required = false) String region,
             @RequestParam(required = false) String search
     ) {
-        // DÉSACTIVÉ : Récupération dynamique
-        // Long restaurantId = securityService.getRestaurantIdFromToken(jwt);
+
+        Long restaurantId = securityService.getRestaurantIdFromToken(jwt);
 
         // ACTIVÉ : Mode "Single Restaurant" (Urgence)
-        Long restaurantId = 1L;
+        // Long restaurantId = 1L;
 
         return vinService.searchVins(restaurantId, minPrix, maxPrix, couleur, region, search);
     }
